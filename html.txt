@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " style="" class=" no-touchevents details"><head>
+    <meta charset="utf-8">
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-5776933-20"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-5776933-20", {"groups":"default","allow_ad_personalization_signals":false});</script>
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/themes/custom/mydenison/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <title>Home | MyDenison</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_vArCCsv3Uu3UZWiksiGXm3bEucim4ykmy8DKWibl7nE.css">
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_rh_r3uwkT471zx9YLdF__AG7NxDJAKmwMnTRI47ST3U.css">
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script>
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" defer="" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.12.0/js/v4-shims.js" defer="" crossorigin="anonymous"></script>
+
+
+    <!-- Icons for "add to home screen" feature in mobile browsers -->
+    <link rel="apple-touch-icon" href="/themes/custom/mydenison/images/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/themes/custom/mydenison/images/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/themes/custom/mydenison/images/touch-icon-ipad-retina.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/mydenison/images/touch-icon-iphone-retina.png">
+    <link rel="icon" sizes="192x192" href="/themes/custom/mydenison/images/android-icon.png">
+    <meta name="msapplication-square310x310logo" content="/themes/custom/mydenison/microsoft-icon.png">
+  </head>
+  <body class="user-logged-in path-frontpage">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    
+<header id="header" class="header" role="banner" aria-label="Site header">
+  <nav class="navbar navbar-expand-lg navbar-dark" id="mydenison-header">
+    <a class="navbar-brand" href="/">
+      <img src="/themes/custom/mydenison/images/mydenison_logo.png" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mydenison-nav-menu" aria-controls="mydenison-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse pt-3 pt-lg-0" id="mydenison-nav-menu">
+        
+
+
+  <ul class="menu main navbar-nav mr-auto align-items-lg-center" id="nav-main-menu">
+
+    
+      
+      <li class="nav-item">
+
+        
+          
+          
+          <a href="/students" class="nav-link" target="_self" data-drupal-link-system-path="students">Students</a>
+
+              </li>
+    
+      
+      <li class="nav-item">
+
+        
+          
+          
+          <a href="/teaching-and-learning" class="nav-link" target="_self" data-drupal-link-system-path="teaching-and-learning">Teaching and Learning</a>
+
+              </li>
+    
+      
+      <li class="nav-item">
+
+        
+          
+          
+          <a href="/campus-resources" class="nav-link" target="_self" data-drupal-link-system-path="campus-resources">Campus Resources</a>
+
+              </li>
+    
+      
+      <li class="nav-item">
+
+        
+          
+          
+          <a href="/employees" class="nav-link" target="_self" data-drupal-link-system-path="employees">HR and Employees</a>
+
+              </li>
+    
+      
+      <li class="nav-item menu-item--expanded">
+
+        
+          
+            
+
+
+
+  <div class="dropdown">
+    <a class="dropdown-toggle nav-link" href="#" role="button" id="my-apps-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      My Apps
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="my-apps-dropdown">
+      
+                <a class="dropdown-item" href="/campus-resources/information-technology-services/service-catalog/device-and-software-support/software/aws-appstream-virtual-lab" target="_self">AWS AppStream Virtual Lab</a>
+      
+                <a class="dropdown-item" href="https://denisonuappointments.as.me" target="_blank">Appointment Scheduling System</a>
+      
+                <a class="dropdown-item" href="/campus-resources/campus-conduct-hotline" target="_self">Campus Conduct Hotline</a>
+      
+                <a class="dropdown-item" href="https://dss.denison.edu/password/change.pl" target="_blank">Change my BigRedID Password</a>
+      
+                <a class="dropdown-item" href="/campus-resources/course-evaluations" target="_self">Course Evaluations</a>
+      
+                <a class="dropdown-item" href="https://solutions.sciquest.com/apps/Router/ExternalAuth/NetId?OrgName=Denison" target="_blank">Denison e-procurement</a>
+      
+                <a class="dropdown-item" href="/myapps/duo_device_management" target="_self">Duo Device Management Portal</a>
+      
+                <a class="dropdown-item" href="/myapps/gartner" target="_self">Gartner Research</a>
+      
+                <a class="dropdown-item" href="/myapps/guest_access" target="_self">Guest Network Access</a>
+      
+                <a class="dropdown-item" href="/campus-resources/incoming-faculty-computer-selection" target="_self">Incoming Faculty Computer Selection</a>
+      
+                <a class="dropdown-item" href="https://www.linkedin.com/learning" target="_blank">LinkedIn Learning</a>
+      
+                <a class="dropdown-item" href="/myapps/myfinaid" target="_self">My Financial Aid</a>
+      
+                <a class="dropdown-item" href="https://denison.datacenter.adirondacksolutions.com/denison_thdss_prod/index.html" target="_blank">My Housing</a>
+      
+                <a class="dropdown-item" href="https://my.iss.denison.edu/" target="_blank">My ISS Portal</a>
+      
+                <a class="dropdown-item" href="https://mywellness.denison.edu/" target="_blank">My Wellness Portal</a>
+      
+                <a class="dropdown-item" href="/students/wheel" target="_self">My Wheel</a>
+      
+                <a class="dropdown-item" href="https://globaltools.denison.edu" target="_blank">Off-Campus Study Program Search</a>
+      
+                <a class="dropdown-item" href="/campus-resources/information-technology-services/service-catalog/device-and-software-support/computing-essentials-and-equipment/printing-guide" target="_self">Printing</a>
+      
+                <a class="dropdown-item" href="/campus-resources/office-of-the-provost/web-based-surveying-with-qualtrics" target="_self">Qualtrics Surveys</a>
+      
+                <a class="dropdown-item" href="https://bradfordreg.denison.edu/registration" target="_blank">Register a device to Denison-Play</a>
+      
+                <a class="dropdown-item" href="/campus-resources/information-technology-services/get-connected/remote-access-to-denison-resources" target="_self">Remote Access</a>
+      
+                <a class="dropdown-item" href="/software-downloads" target="_self">Software Downloads</a>
+      
+                <a class="dropdown-item" href="/student-employment/jobs" target="_self">Student Jobs</a>
+      
+                <a class="dropdown-item" href="https://denison.zoom.us/" target="_blank">Zoom</a>
+          </div>
+  </div>
+
+
+              </li>
+      </ul>
+
+      <div class="flex-wrap">
+        <ul class="navbar-nav ml-auto" id="nav-user-info">
+          <li class="nav-item nowrap">
+            <span class="navbar-text">
+              <i class="fa fa-user" aria-hidden="true"></i>&nbsp;Wilson Le
+            </span>
+          </li>
+          <li id="google_translate_element" class="nav-item"></li>
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, gaTrack: true, gaId: 'UA-5776933-20'}, 'google_translate_element');
+            }
+          </script>
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></ul></div></div></nav></header></div></body></html>
