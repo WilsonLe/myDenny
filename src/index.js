@@ -11,6 +11,7 @@ initExpress();
 		fs.readFile('html.txt', 'utf8', (err, html) => {
 			let links = getLinks(html);
 			links = cleanLinks(links);
+			console.log(links);
 		});
 	} else {
 		html = await getHTML();
