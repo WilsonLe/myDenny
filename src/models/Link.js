@@ -3,13 +3,11 @@ const Schema = mongoose.Schema;
 
 // Schema config
 const schemaFields = {
-	email: String,
-	password: String,
+	url: String,
+	text: String,
 };
 
-const schemaOptions = {
-	timestamps: true,
-};
+const schemaOptions = {};
 
 // Create Schema
 const LinkSchema = new Schema(schemaFields, schemaOptions);
