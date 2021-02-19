@@ -18,6 +18,7 @@
   "homepage": "https://github.com/WilsonLe/myDenny#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "node-html-parser": "^2.1.0",
     "puppeteer": "^7.1.0"
   }
 }
