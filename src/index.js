@@ -1,8 +1,8 @@
 const fs = require('fs');
-const getHTML = require('./util/getHTML');
-const getLinks = require('./util/getLinks');
-const cleanLinks = require('./util/cleanLinks');
-const initExpress = require('./util/initExpress');
+const getHTML = require('./utils/getHTML');
+const getLinks = require('./utils/getLinks');
+const cleanLinks = require('./utils/cleanLinks');
+const initExpress = require('./utils/initExpress');
 require('dotenv').config();
 initExpress();
 
