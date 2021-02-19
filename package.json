@@ -1,24 +1,30 @@
 {
-  "name": "mydenny",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WilsonLe/myDenny.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WilsonLe/myDenny/issues"
-  },
-  "homepage": "https://github.com/WilsonLe/myDenny#readme",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "node-html-parser": "^2.1.0",
-    "puppeteer": "^7.1.0"
-  }
+	"name": "mydenny",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"server": "nodemon src/index.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run client\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/WilsonLe/myDenny.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/WilsonLe/myDenny/issues"
+	},
+	"homepage": "https://github.com/WilsonLe/myDenny#readme",
+	"dependencies": {
+		"concurrently": "^5.3.0",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"node-html-parser": "^2.1.0",
+		"puppeteer": "^7.1.0"
+	}
 }
