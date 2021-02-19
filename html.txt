@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " style="" class=" no-touchevents details"><head>
+<!DOCTYPE html><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " style="" class=" no-touchevents details js"><head>
     <meta charset="utf-8">
 <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-5776933-20"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-5776933-20", {"groups":"default","allow_ad_personalization_signals":false});</script>
@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/mydenison/images/touch-icon-iphone-retina.png">
     <link rel="icon" sizes="192x192" href="/themes/custom/mydenison/images/android-icon.png">
     <meta name="msapplication-square310x310logo" content="/themes/custom/mydenison/microsoft-icon.png">
-  </head>
+  <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"><script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/translate_static/js/element/main.js"></script></head>
   <body class="user-logged-in path-frontpage">
     <a href="#main-content" class="visually-hidden focusable skip-link">
       Skip to main content
@@ -174,4 +174,974 @@
               new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, gaTrack: true, gaId: 'UA-5776933-20'}, 'google_translate_element');
             }
           </script>
-          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></ul></div></div></nav></header></div></body></html>
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          <li class="nav-item nowrap">
+            <a class="nav-link" title="A custom logout link" href="/user/logout">
+              <i class="fas fa-sign-out-alt" aria-hidden="true"></i>&nbsp;&nbsp;Log out
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav" id="nav-quicklinks">
+          <li class="nav-item">
+            <a class="nav-link" title="Report a Concern" href="/node/737" data-analytics-category="Quick Links" data-analytics-label="Report a Concern">
+              <img src="/themes/custom/mydenison/images/Report_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="Report a concern icon">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="Library" href="https://denison.edu/campus/library" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Library">
+              <img src="/themes/custom/mydenison/images/Library_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="Library icon">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="TOPdesk Service" href="https://denison.topdesk.net/tas/public" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="TOPdesk">
+              <img src="/themes/custom/mydenison/images/TOPdesk_Logo.svg" width="75" height="75" class="d-inline-block align-top" alt="TOPdesk Service icon" id="TOPdesk-icon">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="Self-Service Banner" href="https://banner.denison.edu/ssomanager/c/SSB?pkg=twbkwbis.P_GenMenu?name=bmenu.P_MainMnu" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Self-Service Banner">
+              <img src="/themes/custom/mydenison/images/SelfService_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="Self Service Banner">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="NoteBowl" href="https://notebowl.denison.edu" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="NoteBowl">
+              <img src="/themes/custom/mydenison/images/Notebowl_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="" id="notebowl-icon">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" title="Print Release" href="http://printrelease.denison.edu/" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Print Release">
+              <img src="/themes/custom/mydenison/images/printer_icon.png" width="75" height="75" class="d-inline-block align-top" alt="Print Release icon">
+            </a>
+          </li>
+                    <li class="nav-item dropdown G-apps-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="GSuiteDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="/themes/custom/mydenison/images/Google_G_Logo.svg" width="75" height="75" class="d-inline-block align-top" alt="Google Apps Menu" id="G-apps-icon">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="GSuiteDropdown" id="G-Suite-Dropdown">
+              <a class="dropdown-item" title="Gmail" href="https://mail.google.com/a/denison.edu/#inbox" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Gmail">
+                <img src="/themes/custom/mydenison/images/Gmail_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="Gmail icon">
+              </a>
+              <a class="dropdown-item" title="Google Calendar" href="https://calendar.google.com/a/denison.edu/" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Calendar">
+                <img src="/themes/custom/mydenison/images/Google_Calendar_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="Google Calendar icon">
+              </a>
+              <a class="dropdown-item" title="Google Drive" href="https://drive.google.com/a/denison.edu/#my-drive" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Drive">
+                <img src="/themes/custom/mydenison/images/Google_Drive_Logo.png" width="75" height="75" class="d-inline-block align-top" alt="Google Drive icon">
+              </a>
+              <a class="dropdown-item" title="Google Chat" href="https://chat.google.com/a/denison.edu/" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Chat">
+                <img src="/themes/custom/mydenison/images/Google_Hangouts_Chat_icon.png" height="75" class="d-inline-block align-top" alt="Google Chat icon">
+              </a>
+              <a class="dropdown-item" title="Google Meet" href="https://meet.google.com" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Meet">
+                <img src="/themes/custom/mydenison/images/Google_Hangouts_Meet_icon.png" height="75" class="d-inline-block align-top" alt="Google Meet icon">
+              </a>
+            </div>
+          </li>
+          <li class="nav-item G-apps">
+            <a class="nav-link" title="Gmail" href="https://mail.google.com/a/denison.edu/#inbox" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Gmail">
+              <img src="/themes/custom/mydenison/images/Gmail_Logo.svg" width="75" height="75" class="d-inline-block align-top" alt="Gmail icon">
+            </a>
+          </li>
+          <li class="nav-item G-apps">
+            <a class="nav-link" title="Google Calendar" href="https://calendar.google.com/a/denison.edu/" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Calendar">
+              <img src="/themes/custom/mydenison/images/Google_Calendar_Icon.png" width="75" height="75" class="d-inline-block align-top" alt="Google Calendar icon">
+            </a>
+          </li>
+          <li class="nav-item G-apps">
+            <a class="nav-link" title="Google Drive" href="https://drive.google.com/a/denison.edu/#my-drive" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Drive">
+              <img src="/themes/custom/mydenison/images/Google_Drive_Logo.svg" width="75" height="75" class="d-inline-block align-top" alt="Google Drive icon">
+            </a>
+          </li>
+          <li class="nav-item G-apps">
+            <a class="nav-link" title="Google Chat" href="https://chat.google.com/a/denison.edu/" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Chat">
+              <img src="/themes/custom/mydenison/images/Google_Hangouts_Chat_icon.png" width="75" height="75" class="d-inline-block align-top" alt="Google Chat icon">
+            </a>
+          </li>
+          <li class="nav-item G-apps">
+            <a class="nav-link" title="Google Meet" href="https://meet.google.com" target="_blank" rel="noopener noreferrer" data-analytics-category="Quick Links" data-analytics-label="Google Meet">
+              <img src="/themes/custom/mydenison/images/Google_Hangouts_Meet_icon.png" width="75" height="75" class="d-inline-block align-top" alt="Google Meet icon">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container">
+    
+  <div id="main-wrapper" class="layout-main-wrapper clearfix">
+    <div class="row">
+      <div class="col-12">
+                  <div id="main" class="">
+            <main>
+              <section class="section">
+                <a id="main-content" tabindex="-1"></a>
+                                  <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-content-page-1" data-drupal-selector="views-exposed-form-search-content-page-1" id="block-search"><div class="content"><form action="/search/content" method="get" id="views-exposed-form-search-content-page-1" accept-charset="UTF-8"><div class="form--inline clearfix search-box-container-div"><div class="search-box-icon-div"><span class="search-box-icon"></span></div><div class="js-form-item form-item js-form-type-search-api-autocomplete form-item-search js-form-item-search"><label for="edit-search">Search</label><input data-drupal-selector="edit-search" type="text" id="edit-search" name="search" value="" size="30" maxlength="128" class="form-text"></div><button class="search-box-autocomplete-submit-button" type="submit"></button></div></form></div></div>
+                                <div data-drupal-messages-fallback="" class="hidden"></div>
+                <div><style type="text/css"><!--/*--><![CDATA[/* ><!--*/
+
+<!--/*--><![CDATA[/* ><!--*/
+.front-button-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+.btn-denison {
+  background-color: #c8032b;
+  box-shadow: 2px 2px 5px #0000004d;
+  color: #fff;
+  display: flex;
+  margin-bottom: 1em;
+  min-height: 78px;
+  width: 300px;
+  transition: all 0.3s;
+}
+.btn-denison:hover {
+  background-color: #b00024;
+  box-shadow: 1px 1px 3px #0000004d;
+  color: #fff;
+}
+.front-button-grid a > span {
+  margin: auto;
+}
+
+/*--><!]]]]><![CDATA[>*/
+
+/*--><!]]>*/
+</style><div class="front-button-grid"><a class="btn btn-lg btn-denison" data-analytics-category="Home Button Block" data-analytics-label="Denison Events" href="/node/7241"><span>COVID-19 Dashboard</span></a><a class="btn btn-lg btn-denison" data-analytics-category="Home Button Block" data-analytics-label="My Wellness Portal" href="https://mywellness.denison.edu/" target="_blank"><span>My Wellness Portal</span></a><a class="btn btn-lg btn-denison" data-analytics-category="Home Button Block" data-analytics-label="Student Employment" href="/campus-resources/student-employment"><span>Student Employment</span></a><a class="btn btn-lg btn-denison" data-analytics-category="Home Button Block" data-analytics-label="Employee COVID Info" href="https://reopen.denison.edu/hc/en-us/categories/360004005694-Faculty-Staff"><span>Employee COVID Info</span></a></div><p class="text-center mb-4"><button class="btn btn-lg btn-link" data-target="#studentTabModal" data-toggle="modal" type="button"><span>Looking for more buttons?</span><span style="white-space: nowrap;"><i class="fas fa-chevron-left" style="color: #c8032b;"></i><i class="fas fa-chevron-left" style="color: #c8032b; opacity:0.7;"></i><i class="fas fa-chevron-left" style="color: #c8032b; opacity:0.4;"></i></span></button></p><div aria-hidden="true" aria-labelledby="studentTabModalLabel" class="modal fade" id="studentTabModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><p>Go to the <a href="/students">Students page</a> for more buttons.</p><p><img alt="Click on Student Tab" data-entity-type="file" data-entity-uuid="9ff2e06e-5987-40ce-ba88-45817e1b24ec" src="/system/files/inline-images/Student%20Tab%20Click_small.gif" style="width: 100%;"></p></div></div></div></div></div>
+                <div id="block-mydenison-content" class="block block-system block-system-main-block"><div class="content"><div id="homebox" class=" clearfix"><div id="homebox-buttons" aria-hidden="true" class="text-right mb-1"><a href="javascript:void(0)" id="homebox-add-link">Add or reset blocks</a></div><div id="homebox-add" class="text-right mb-1" role="group" aria-label="Add Blocks to this page"><div class="item-list"><ul id="add-blocks-list" class="clearfix"></ul></div></div><div class="homebox-maximized"></div><div class="row"><!-- Assuming 2 regions (Left/Right) --><div class="homebox-column col-lg-6 pr-lg-4" id="homebox-column-1"><div id="campuseventsblock" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            Campus Events
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="Campus Events Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content">
+
+<div id="denison-campus-events">
+
+  <div class="vuejs-loader text-secondary m-3" v-cloak="">
+    <div class="spinner-border spinner-border-sm" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div v-cloak="">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <form class="form-inline">
+      <button type="button" class="btn" v-bind:class="{ 'btn-primary': isToday }" v-on:click="updateTab('today')" aria-label="Show Campus Events for Today" role="button">
+        Today
+      </button>
+      <button type="button" class="btn" v-bind:class="{ 'btn-primary': isTomorrow }" v-on:click="updateTab('tomorrow')" aria-label="Show Campus Events for Tomorrow" role="button">
+        Tomorrow
+      </button>
+    </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#denison-campus-events-navbar" aria-controls="denison-campus-events-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="denison-campus-events-navbar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://events.denison.edu/" target="_blank" title="Go to Calendar">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://vems.denison.edu/EmsWebApp/BrowseForSpace.aspx" target="_blank" title="Check Room Availability (EMS)">Availability</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/node/1357" target="_blank" title="Book an Event">Reservation</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="list-group">
+    <p v-if="!events.length">No events listed for this day.</p>
+    <a v-for="event in events" class="list-group-item list-group-item-action" v-bind:href="event.link" target="_blank">
+      <div>
+        <img class="float-left mr-2" v-if="event.image" v-bind:src="event.image">
+        <div>
+          <h4>{{ event.title }}</h4>
+          <small>{{ event.date_formatted }}</small>
+          <p v-html="event.description"></p>
+        </div>
+      </div>
+    </a>
+  </div>
+  </div>
+</div>
+
+
+
+
+</div>
+    </div>
+  </div><div id="diningmenublock" class="homebox-portlet homebox-draggable block collapsed-false"><div class="homebox-portlet-inner"><h2 class="portlet-header"><div class="row"><div class="col-8">
+            Dining menu
+          </div><div class="col-4 text-right"><div class="btn-group align-text-top" role="group" aria-label="Dining menu Block Controls"><button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button><button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></div></div></div></h2><div class="portlet-content content"><div class="dining-menu"><nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;"><a class="navbar-brand"><h3 style="margin-bottom: 0;">Curtis</h3></a><a class="nav-link cafe-hours" href="http://denison.cafebonappetit.com/cafe/curtis-cafe/#panel-cafe-hours" target="_blank">hours</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav0" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav0"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/curtis-cafe/#breakfast" target="_blank">Breakfast</a></li><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/curtis-cafe/#lunch" target="_blank">Lunch</a></li><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/curtis-cafe/#dinner" target="_blank">Dinner</a></li></ul></div></nav><nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;"><a class="navbar-brand"><h3 style="margin-bottom: 0;">Huffman</h3></a><a class="nav-link cafe-hours" href="http://denison.cafebonappetit.com/cafe/huffman-cafe/#panel-cafe-hours" target="_blank">hours</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav1"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/huffman-cafe/#breakfast" target="_blank">Breakfast</a></li><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/huffman-cafe/#lunch" target="_blank">Lunch</a></li><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/huffman-cafe/#dinner" target="_blank">Dinner</a></li></ul></div></nav><nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;"><a class="navbar-brand"><h3 style="margin-bottom: 0;">Slayter</h3></a><a class="nav-link cafe-hours" href="http://denison.cafebonappetit.com/cafe/slayter-market/#panel-cafe-hours" target="_blank">hours</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav2"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/slayter-market/#breakfast" target="_blank">Breakfast</a></li><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/slayter-market/#lunch" target="_blank">Lunch</a></li><li class="nav-item"><a class="nav-link" href="http://denison.cafebonappetit.com/cafe/slayter-market/#dinner" target="_blank">Dinner</a></li></ul></div></nav></div></div></div></div><div id="denisonemail" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            My Email
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="My Email Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content"><div class="mail_portlet_wrapper">
+            <div class="mail_message read " onclick="window.open('https://mail.google.com/a/denison.edu/mail/u/0/#inbox/177b81d5191b56b2');">
+        <div class="message_headers">
+        <span class="message_from">Aise Sevkli &lt;sevklia@denison.edu&gt;</span>
+        <span class="attachment_icon"></span>
+        <span class="message_date">9:27 PM</span>
+        </div>
+        <div class="message_subject">New Post in CS 173-02: Intermediate Computer Science</div>
+      </div>
+          <div class="mail_message read " onclick="window.open('https://mail.google.com/a/denison.edu/mail/u/0/#inbox/177b7555a4129173');">
+        <div class="message_headers">
+        <span class="message_from">Denison University &lt;scheduling@squarespacescheduling.com&gt;</span>
+        <span class="attachment_icon"></span>
+        <span class="message_date">Yesterday 5:49 PM</span>
+        </div>
+        <div class="message_subject">Appointment Reminder: Crown Fitness Center - 45 minute time slot is on Thursday, February 18, 2021 6:45pm EST (Mitchell Athletic Center - Crown Fitness)</div>
+      </div>
+          <div class="mail_message read " onclick="window.open('https://mail.google.com/a/denison.edu/mail/u/0/#inbox/177b73053a7a2f82');">
+        <div class="message_headers">
+        <span class="message_from">Denison University &lt;scheduling@acuityscheduling.com&gt;</span>
+        <span class="attachment_icon"></span>
+        <span class="message_date">Yesterday 5:08 PM</span>
+        </div>
+        <div class="message_subject">Appointment Reminder: Crown Fitness Center - 45 minute time slot is on Thursday, February 18, 2021 6:00pm EST (Mitchell Athletic Center - Crown Fitness)</div>
+      </div>
+          <div class="mail_message read " onclick="window.open('https://mail.google.com/a/denison.edu/mail/u/0/#inbox/177b6f7e499fb18d');">
+        <div class="message_headers">
+        <span class="message_from">Alanna Duprez &lt;duprez_a1@denison.edu&gt;</span>
+        <span class="attachment_icon"></span>
+        <span class="message_date">Yesterday 4:07 PM</span>
+        </div>
+        <div class="message_subject">Re: Wilson one on one</div>
+      </div>
+          <div class="mail_message read " onclick="window.open('https://mail.google.com/a/denison.edu/mail/u/0/#inbox/177b6f21fa57c389');">
+        <div class="message_headers">
+        <span class="message_from">Amazon Business &lt;no-reply@business.amazon.com&gt;</span>
+        <span class="attachment_icon"></span>
+        <span class="message_date">Yesterday 4:00 PM</span>
+        </div>
+        <div class="message_subject">Minh&nbsp;– Access business-only savings</div>
+      </div>
+      </div>
+<div class="mail_portlet_wrapper">
+  <footer>
+    <i class="fa fa-refresh" onclick="jQuery(this).addClass('fa-spin');jQuery('#denisonemail .content').load('/email/refresh');"></i>
+  </footer>
+</div>
+
+
+</div>
+    </div>
+  </div></div><div class="homebox-column col-lg-6 pl-lg-4" id="homebox-column-2"><div id="campusdirectory" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            Campus Directory
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="Campus Directory Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content">
+
+<div id="denison-campus-directory">
+
+  <div class="vuejs-loader text-secondary m-3" v-cloak="">
+    <div class="spinner-border spinner-border-sm" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <ul class="nav nav-tabs justify-content-end mb-3" v-if="!searchTerm" v-cloak="">
+    <li class="nav-item">
+      <a class="nav-link" v-bind:class="{ active: isSearchActive }" v-on:click.prevent="tab='search'" href="#campus-directory-search">
+        Search
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" v-bind:class="{ active: isEditActive }" v-on:click.prevent="tab='edit'" href="#campus-directory-edit">
+        Edit Profile
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" v-bind:class="{ active: isAboutActive }" v-on:click.prevent="tab='about'" href="#campus-directory-about">
+        About
+      </a>
+    </li>
+  </ul>
+
+  <div id="directorySearchForm" v-if="isSearchActive" v-cloak="">
+    <form v-on:submit.prevent="directorySearch" class="mb-4" v-if="!searchTerm">
+      <div class="text-right">
+        <a data-toggle="collapse" role="button" data-target=".multi-collapse" class="btn btn-sm" v-on:click.prevent="search.isAdvanced = !search.isAdvanced" href="#advancedSearch" aria-expanded="false" aria-controls="advancedSearchForm basicSearchForm">
+          {{ search.isAdvanced ? 'Basic Search' : 'Advanced Search' }}
+        </a>
+      </div>
+      <div class="collapse multi-collapse show form-row mb-4" id="basicSearchForm">
+        <div class="col">
+          <label for="directoryGeneralSearchField" class="sr-only">Directory
+            Search</label>
+          <input type="text" class="form-control" id="directoryGeneralSearchField" aria-describedby="directoryGeneralSearchHelp" placeholder="Directory Search" v-model="search.basic">
+          <small id="directoryGeneralSearchHelp" class="sr-only">This is a
+            single search field for the directory, if you need to narrow your
+            results try the Custom Search options
+          </small>
+        </div>
+      </div>
+      <div class="collapse multi-collapse mb-3" id="advancedSearchForm">
+        <div class="form-group">
+          <label for="directoryFirstNameField" class="sr-only">First
+            Name</label>
+          <input type="text" class="form-control" id="directoryFirstNameField" v-model="search.firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="directoryLastNameField" class="sr-only">Last Name</label>
+          <input type="text" class="form-control" id="directoryLastNameField" v-model="search.lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label for="directoryOtherField" class="sr-only">Other (address, name,
+            phone #,
+            etc.)</label>
+          <input type="text" class="form-control" id="directoryOtherField" v-model="search.other" placeholder="Other (address, name, phone #, etc.)">
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input type="checkbox" class="custom-control-input" v-model="search.student" id="directoryStudentCheckbox">
+          <label class="custom-control-label" for="directoryStudentCheckbox">Students</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input type="checkbox" class="custom-control-input" v-model="search.staff" id="directoryStaffCheckbox">
+          <label class="custom-control-label" for="directoryStaffCheckbox">Faculty/Staff</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit" v-bind:disabled="loading">
+        <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Search
+      </button>
+    </form>
+
+    <div id="directorySearchResults">
+      <p v-if="searchTerm">
+        Search Results for '{{ searchTerm }}' ({{ results.length }})<br>
+        <button v-if="!showResults" type="button" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#directoryResultsCollapse" aria-expanded="true" aria-controls="directoryResultsCollapse">Toggle Results</button>
+      </p>
+      <div class="collapse" id="directoryResultsCollapse" v-bind:class="{show: showResults}">
+        <div v-if="searchReturned &amp;&amp; results.length == 0">
+          <p>No results returned.</p>
+        </div>
+        <div class="directorySearchResult card mb-2" v-for="(result, index) in results" :key="result.fullname">
+          <div class="row no-gutters">
+            <div class="col-auto card-img-container">
+              <img v-bind:alt="initials(result)" class="card-img-top center" v-bind:src="result.showPhoto || user.hasOverride ? '/campus-directory/photo/' + result.username : ''">
+            </div>
+            <div class="col" v-bind:id="'directory-search-result-' + index">
+              <div class="card-body">
+                <h3 class="card-title mb-0" aria-label="Full Name">
+                  {{ result.fullname }}
+                </h3>
+                <div class="card-contents">
+                  <p class="card-text">
+                    <span v-if="result.jobTitle || result.departmentName" aria-label="Title and Department">
+                      {{ result.jobTitle }}
+                      <span v-if="result.jobTitle &amp;&amp; result.departmentName"> - </span>
+                      {{ result.departmentName }}
+                    </span>
+                    <span v-if="result.officeLocation" aria-label="Office Location" title="Office Location">
+                      <i class="fa fa-briefcase" aria-hidden="true"></i>
+                      &nbsp;{{ result.officeLocation }}
+                    </span>
+                    <span v-if="result.dnumber" aria-label="DNumber">
+                      <i class="fa fa-hashtag" aria-hidden="true"></i>
+                      &nbsp;{{ result.dnumber }}
+                    </span>
+                    <span v-if="result.classYear" aria-label="Class Year" title="Class Year">
+                      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                      &nbsp;{{ result.classYear }}
+                    </span>
+                  </p>
+                  <p class="card-text">
+                    <span v-if="result.email" aria-label="Email Address" title="Email Address">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      &nbsp;<a v-bind:href="'mailto:' + result.email" v-html="result.displayEmail"></a>
+                    </span>
+                    <span v-if="result.slayterBox" aria-label="Slayter Box" title="Slayter Box">
+                      <i class="fa fa-archive" aria-hidden="true"></i>
+                      &nbsp;Slayter {{ result.slayterBox }}
+                    </span>
+                    <span v-if="result.dormAddress" aria-label="Dorm Address" title="Dorm Address">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      &nbsp;{{ result.dormAddress }}
+                    </span>
+                    <span v-if="result.officePhone" aria-label="Office Phone" title="Office Phone">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      &nbsp;Office: <span class="text-nowrap">{{ result.officePhone }}</span>
+                    </span>
+                    <span v-if="result.labPhone" aria-label="Lab Phone" title="Lab Phone">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      &nbsp;Lab: <span class="text-nowrap">{{ result.labPhone }}</span>
+                    </span>
+                    <span v-if="result.homePhone" aria-label="Home Phone" title="Home Phone">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      &nbsp;Home: <span class="text-nowrap">{{ result.homePhone }}</span>
+                    </span>
+                    <span v-if="result.homeAddress" aria-label="Home Address" title="Home Address">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      &nbsp;{{ result.homeAddress }}
+                    </span>
+                    <span v-if="result.spouse" aria-label="Spouse/Partner" title="Spouse/Partner">
+                      <i class="fa fa-user-friends" aria-hidden="true"></i>
+                      &nbsp;{{ result.spouse }}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="directoryEditProfile" v-if="isEditActive &amp;&amp; !searchTerm" v-cloak="">
+    <div v-if="profileSaveResponse.show" class="alert" id="directory-profile-alert" v-bind:class="{ 'alert-success': profileSaveResponse.success, 'alert-error': !profileSaveResponse.success }" role="alert">
+      {{ profileSaveResponse.message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <form class="mb-2">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="directoryPhotoCheckbox" v-model="user.showPhoto">
+        <label class="custom-control-label" for="directoryPhotoCheckbox">Show
+          Photo</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showEmail" id="directoryEmailCheckbox">
+        <label class="custom-control-label" for="directoryEmailCheckbox">Show
+          Email Address</label>
+      </div>
+      <div v-if="user.officePhone" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showOfficePhone" id="directoryOfficePhoneCheckbox">
+        <label class="custom-control-label" for="directoryOfficePhoneCheckbox">Show
+          Office Phone</label>
+      </div>
+      <div v-if="user.labPhone" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showLabPhone" id="directoryLabPhoneCheckbox">
+        <label class="custom-control-label" for="directoryLabPhoneCheckbox">Show
+          Lab Phone</label>
+      </div>
+      <div v-if="user.homePhone" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showHomePhone" id="directoryHomePhoneCheckbox">
+        <label class="custom-control-label" for="directoryHomePhoneCheckbox">Show
+          Home Phone</label>
+      </div>
+      <div v-if="user.slayterBox" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showSlayterBox" id="directorySlayterBoxCheckbox">
+        <label class="custom-control-label" for="directorySlayterBoxCheckbox">Show
+          Slayter Box</label>
+      </div>
+      <div v-if="user.dormAddress" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showDormAddress" id="directoryDormAddressCheckbox">
+        <label class="custom-control-label" for="directoryDormAddressCheckbox">Show
+          Dorm Address</label>
+      </div>
+      <div v-if="user.homeAddress" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showHomeAddress" id="directoryHomeAddressCheckbox">
+        <label class="custom-control-label" for="directoryHomeAddressCheckbox">Show
+          Home Address</label>
+      </div>
+      <div v-if="user.spouse" class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" v-model="user.showSpouse" id="directorySpouseCheckbox">
+        <label class="custom-control-label" for="directorySpouseCheckbox">Show
+          Spouse</label>
+      </div>
+      <button class="btn btn-primary" type="button" v-on:click="updateProfile" v-bind:disabled="loading">
+        <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Save
+      </button>
+    </form>
+    <div class="directorySearchResult card mb-2">
+      <div class="row no-gutters">
+        <div class="col-auto">
+          <img v-bind:alt="initials(user)" class="card-img-top center" v-bind:src="user.showPhoto ? '/campus-directory/photo/' + user.username : ''">
+        </div>
+        <div class="col">
+          <div class="card-body">
+            <h5 class="card-title mb-0" aria-label="Full Name">
+              {{ user.fullname }}
+            </h5>
+            <p class="card-text">
+                <span v-if="user.jobTitle || user.departmentName" aria-label="Title and Department">
+                  {{ user.jobTitle }}
+                  <span v-if="user.jobTitle &amp;&amp; user.departmentName"> - </span>
+                  {{ user.departmentName }}
+                </span>
+              <span v-if="user.officeLocation" aria-label="Office Location" title="Office Location">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i>
+                  &nbsp;{{ user.officeLocation }}
+                </span>
+              <span v-if="user.classYear" aria-label="Class Year" title="Class Year">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                  &nbsp;{{ user.classYear }}
+                </span>
+            </p>
+            <p class="card-text">
+                <span v-if="user.showEmail &amp;&amp; user.email" aria-label="Email Address" title="Email Address">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  &nbsp;<a v-bind:href="'mailto:' + user.email">{{ user.email }}</a>
+                </span>
+              <span v-if="user.showSlayterBox &amp;&amp; user.slayterBox" aria-label="Slayter Box" title="Slayter Box">
+                  <i class="fa fa-archive" aria-hidden="true"></i>
+                  &nbsp;{{ user.slayterBox }}
+                </span>
+              <span v-if="user.showDormAddress &amp;&amp; user.dormAddress" aria-label="Dorm Address" title="Dorm Address">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  &nbsp;{{ user.dormAddress }}
+                </span>
+              <span v-if="user.showOfficePhone &amp;&amp; user.officePhone" aria-label="Office Phone" title="Office Phone">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  &nbsp;{{ user.officePhone }}
+                </span>
+              <span v-if="user.showLabPhone &amp;&amp; user.labPhone" aria-label="Lab Phone" title="Lab Phone">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  &nbsp;{{ user.labPhone }}
+                </span>
+              <span v-if="user.showHomePhone &amp;&amp; user.homePhone" aria-label="Home Phone" title="Home Phone">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  &nbsp;{{ user.homePhone }}
+                </span>
+              <span v-if="user.showHomeAddress &amp;&amp; user.homeAddress" aria-label="Home Address" title="Home Address">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  &nbsp;{{ user.homeAddress }}
+                </span>
+              <span v-if="user.showSpouse &amp;&amp; user.spouse" aria-label="Spouse/Partner" title="Spouse/Partner">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  &nbsp;{{ user.spouse }}
+                </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="directoryAbout" v-if="isAboutActive &amp;&amp; !searchTerm" v-cloak="">
+    <h4>Who is included in the MyDenison Campus Directory?</h4>
+    <p>All faculty with phone numbers, full-time staff with phone numbers, and
+      active students of the Denison community.</p>
+
+    <h4>Can I change my directory information?</h4>
+    <p>Yes! You can show or hide items in your directory profile, including your
+      photo. <a v-on:click="tab='edit'">Edit your profile now</a> to adjust what
+      information shows when others search for you. If your directory
+      information is incorrect or needs to be updated:
+    </p>
+    <p><strong>Students</strong> should email Student Housing at <a href="mailto:housing@denison.edu?Subject=Profile%20Update">housing@denison.edu</a>.
+    </p>
+    <p><strong>Faculty and Staff</strong> should email the Office of Human
+      Resources at <a href="mailto:humanresources@denison.edu?Subject=Profile%20Update">humanresources@denison.edu</a>.
+    </p>
+
+    <h4>Where did my photo come from and how can I change it?</h4>
+    <p>The digital photograph in the MyDenison Campus Directory is your Denison ID
+    Card photo. ID photos are submitted twice; once when you obtain your first
+    Denison ID and again when you obtain your Blue Denison ID. ID photos are
+    submitted online via the <a href="/node/7111">ID Request page</a>.
+    Should you have any questions you may email
+    <a href="mailto:housing@denison.edu">housing@denison.edu</a> or
+    stop by the Student Housing Operations and Planning Office located in Doane
+    102.</p>
+
+    <p>Because the MyDenison Campus Directory serves Campus Security &amp; Safety,
+    Health &amp; Counseling Services and other offices in locating and identifying
+    members of the campus community, an official Denison ID card photograph is
+    used in the directory. Photographs used on the public Denison website are
+    for marketing purposes and are not official ID photos therefore cannot be
+    transferred or uploaded to the MyDenison directory.</p>
+
+    <h4>How is MyDenison Campus Directory different from Denison A-Z on
+      Denison's public website?</h4>
+    <p>Unlike the Denison A-Z, MyDenison Campus Directory contains photographs
+      of our student community members. MyDenison Campus Directory also displays
+      home addresses and phone numbers when allowed by that person.</p>
+  </div>
+</div>
+
+
+
+</div>
+    </div>
+  </div><div id="featuredeventsblock" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            Featured Events
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="Featured Events Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content">
+
+<div class="text-right " id="denison-featured-events">
+  <a class="btn btn-sm btn-primary mb-2" href="/node/add/feature">
+    Submit a Feature
+  </a>
+  <div id="featured-events-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+    <div class="carousel-inner">
+      
+      <div class="carousel-item" v-bind:class="{ active: index === 0 }" v-for="(event, index) in events">
+        
+        <div v-if="event.field_url.length != 0">
+          <a v-bind:href="event.field_url" target="_blank" rel="noopener noreferrer">
+            <div class="featured-event d-flex align-items-center justify-content-center" v-html="event.image">
+            </div>
+          </a>
+        </div>
+        <div v-else="">
+          <div class="featured-event d-flex align-items-center justify-content-center" v-html="event.image">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#featured-events-carousel" role="button" data-slide="prev">
+        <div class="carousel-control-button-background">
+          <button type="button" class="btn btn-outline-secondary btn-sm carousel-button" title="Previous" aria-label="Previous">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          </button>
+        </div>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#featured-events-carousel" role="button" data-slide="next">
+        <div class="carousel-control-button-background">
+          <button type="button" class="btn btn-outline-secondary btn-sm carousel-button" title="Next" aria-label="Next">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <ol class="carousel-indicators">
+      
+      <li data-target="#featured-events-carousel" v-bind:data-slide-to="index" v-bind:class="{ active: index === 0 }" v-for="(event, index) in events">
+      </li>
+      
+    </ol>
+  </div>
+</div>
+
+
+
+
+</div>
+    </div>
+  </div><div id="denisonnews" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            Denison News
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="Denison News Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content">
+
+  <div id="denison-news">
+    <div class="vuejs-loader text-secondary m-3" v-cloak="">
+      <div class="spinner-border spinner-border-sm" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div v-cloak="">
+      <ul class="nav nav-pills mb-2">
+      <li class="nav-item" v-for="category in categories">
+        <a class="nav-link" v-bind:class="{ active: isTabActive(category) }" v-on:click.prevent="updateTab(category)" v-bind:href="'#denison-news-' + category">
+          {{ category }}
+        </a>
+      </li>
+    </ul>
+      <div class="list-group">
+      <a class="list-group-item list-group-item-action" target="_blank" v-bind:href="story.link" v-for="story in tabStories" :key="story.link">
+        <div>
+          <img class="float-left mr-2 mb-2" style="max-width: 100%" v-if="story.image" v-bind:src="story.image">
+          <div>
+            <h4>{{ story.title }}</h4>
+            <small>{{ story.dateFormatted }}</small>
+            <p v-html="story.description"></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+    </div>
+  </div><div id="servicestatus" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            Service Status
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="Service Status Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content">
+
+  <div id="denison-service-status" class="service-status-block" only-sticky="true">
+
+    <div class="vuejs-loader text-secondary m-3" v-cloak="">
+      <div class="spinner-border spinner-border-sm" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <transition-group name="resource-list" tag="ul" v-cloak="">
+      <li v-for="service in resources" :key="service.nid" class="resource-list-item">
+        <div class="service-status-item">
+          <img v-bind:src="service.icon_url" width="20" height="20">
+          <!--<i class="fas fa-circle service-status"
+             v-bind:class="[service.status_class]"></i>-->
+          <a v-bind:href="service.service_status > 1 ? 'https://netnotes.denison.edu' : service.resource_url">{{ service.title }}</a>
+          <i v-bind:class="[{
+            'fas fa-check service-status-icon': service.service_status == 1,
+            'fas fa-wrench service-status-icon': service.service_status == 2,
+            'fas fa-times service-status-icon': service.service_status == 3},
+            service.status_class
+          ]"></i>
+        </div>
+      </li>
+    </transition-group>
+
+    <div class="status-key">
+      <span><i class="fas fa-check online"></i> Online</span>
+      <span><i class="fas fa-wrench maintenance"></i> Maintenance</span>
+      <span><i class="fas fa-times offline"></i> Outage</span>
+    </div>
+
+    <a href="/service-status">View All</a>
+      </div>
+
+</div>
+    </div>
+  </div></div><div id="homebox-column-hidden"><div id="announcements" class="homebox-portlet homebox-draggable block collapsed-false">
+        <div class="homebox-portlet-inner">
+      <h2 class="portlet-header">
+        <div class="row">
+          <div class="col-8">
+            Announcements
+          </div>
+          <div class="col-4 text-right">
+            <div class="btn-group align-text-top" role="group" aria-label="Announcements Block Controls">
+              <button type="button" class="portlet-close btn btn-outline-secondary btn-sm" title="Close" aria-label="Close">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="portlet-minus btn btn-outline-secondary btn-sm" title="Collapse" aria-label="Collapse/Expand">
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </h2>
+      <div class="portlet-content content"><div class="denison-announcements">
+
+  
+  <div class="list-group">
+          <a href="/node/8325" class="list-group-item list-group-item-action">
+        <h4>1095 - C Forms Available on Employee Dashboard Now</h4>
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even" property="content:encoded">
+              <p>Message from the Office of Human Resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&nbsp;
+
+
+Electronic 1095-C forms are now available on Employee Dashboard for all employees who were benefit-eligible in 202...</p>
+            </div>
+          </div>
+        </div>
+
+      </a>
+          <a href="/node/8282" class="list-group-item list-group-item-action">
+        <h4>TIAA Virtual Counseling Sessions</h4>
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even" property="content:encoded">
+              <p>Denison’s long-time TIAA Relationship Manager who provides individual retirement sessions, Randy Martinez, was recently promoted which means that a new Relationship Manager will be appointed to Deni...</p>
+            </div>
+          </div>
+        </div>
+
+      </a>
+          <a href="/node/8285" class="list-group-item list-group-item-action">
+        <h4>The Mitchel Center will be closed on 2/20 and 2/27</h4>
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even" property="content:encoded">
+              <p>The Mitchel Center will be closed on 2/20 and 2/27 for a number of varsity events and teams in the facility. Mitchell will only be open for our varsity athletes. There will be no meetings, club, intra...</p>
+            </div>
+          </div>
+        </div>
+
+      </a>
+          <a href="/node/8276" class="list-group-item list-group-item-action">
+        <h4>An Email-Use Reflection on the Schedule Send function</h4>
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even" property="content:encoded">
+              <p>&nbsp;
+
+&nbsp;Can This Wait?
+
+An Email-Use Reflection and Question from the ECC (Revamped for 2021)
+
+What seems like an eternity ago, in January and February of 2020, the ECC sent out a three-pa...</p>
+            </div>
+          </div>
+        </div>
+
+      </a>
+          <a href="/node/8300" class="list-group-item list-group-item-action">
+        <h4>Commencement: Classes of 2020 and 2021</h4>
+        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even" property="content:encoded">
+              <p>With the spring semester well underway, Commencement for the Class of 2021 will be here before we know it. We are working to plan an in-person Commencement ceremony on May 22. Plans will be contingent...</p>
+            </div>
+          </div>
+        </div>
+
+      </a>
+    
+      </div>
+  <div id="more_announcements">
+    <a class="btn btn-primary" href="/announcements">more announcements</a>
+  </div>
+</div>
+</div>
+    </div>
+  </div></div></div></div></div></div>
+              </section>
+                          </main>
+          </div>
+              </div>
+    </div>
+  </div>
+
+  
+  </div>
+<div id="footer" class="row">
+  <div class="denison-brand col-md-8 text-center text-md-left">
+    <img src="/themes/custom/mydenison/images/denison-university-wordmark-red.svg">
+    <p>
+      100 West College Street<br>
+      Granville, Ohio 43023<br>
+      © 2021 Denison University
+    </p>
+  </div>
+  <div role="navigation" aria-label="Footer Navigation" class="col-md-4">
+    <ul class="nav flex-column text-center text-md-right">
+      <li class="nav-item">
+        <a class="nav-link" href="/node/725">Suggestions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/release-notes">Release Notes</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"home","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"UA-5776933-20","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":true,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":".front-button-grid","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ajaxTrustedUrl":{"\/search\/content":true},"denison_resource":{"resources":[{"title":"Banner","nid":5829,"sticky":"1","changed":"1609596608","resource_url":"https:\/\/banner.denison.edu\/","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/default_images\/denison-resource-default-256_0.png"},{"title":"Notebowl","nid":5830,"sticky":"1","changed":"1597805893","resource_url":"https:\/\/notebowl.denison.edu\/","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/notebowl-icon-256.png"},{"title":"Duo","nid":5820,"sticky":"1","changed":"1587991334","resource_url":"https:\/\/status.duo.com\/","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/Duo-logo-256.png"},{"title":"Network","nid":5827,"sticky":"1","changed":"1574256415","resource_url":"https:\/\/my.denison.edu\/node\/434","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/default_images\/denison-resource-default-256_0.png"},{"title":"CBTS","nid":6238,"sticky":"1","changed":"1570107404","resource_url":"https:\/\/my.denison.edu\/phones","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/cbts_logo_256.png"},{"title":"Novell","nid":5828,"sticky":"1","changed":"1565201683","resource_url":"https:\/\/my.denison.edu\/node\/422","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/default_images\/denison-resource-default-256_0.png"},{"title":"Denison Apps","nid":5833,"sticky":"1","changed":"1549378922","resource_url":"http:\/\/apps.denison.edu\/","service_status":"1","status_class":"online","icon_url":"\/sites\/default\/files\/google-256.png"}],"refreshTimeout":300000},"denison_news":{"categories":["Campus","Athletics","ITS","Ohio","US","World"],"stories":{"Campus":[{"title":"DU Prof looks at the geology of a formerly wet planet: Mars (Discovery Magazine)","link":"https:\/\/www.discovermagazine.com\/planet-earth\/geology-of-a-formerly-wet-planet-at-the-mars-perseverance-rover-landing-site\n","description":"NASA will land the most sophisticated rover ever on Mars this week; prof. Erik Klemetti lays out an agenda to map the history of the red planet.","image":"https:\/\/denison.edu\/sites\/default\/files\/news\/image\/2021\/shutterstock_1350920336.jpg"},{"title":"Kindness during COVID-19: Science, Religion, and Uncertainty","link":"https:\/\/denison.edu\/news-events\/featured\/141499","description":"Prof. Shiri Noy recently was awarded a $12,500 grant to examine how religious and secular Americans view kindness in the context of COVID-19.","image":"https:\/\/denison.edu\/sites\/default\/files\/news\/image\/2021\/noyshirisoc_anthro2019_3230_1.jpg"},{"title":"NJ students report on young activism in Newark (Newark Advocate)","link":"https:\/\/www.newarkadvocate.com\/story\/news\/local\/2021\/02\/14\/heaths-jyheim-harden-starts-young-road-activism-licking-county\/4441309001\/\n","description":"Second in a series of investigative reporting by Narrative Journalism students on Black lives in Newark.","image":"https:\/\/denison.edu\/sites\/default\/files\/news\/image\/2021\/img_4635.jpg"},{"title":"Students report from Bethel Rock House of Prayer (Newark Advocate)","link":"https:\/\/www.newarkadvocate.com\/story\/news\/local\/2021\/02\/07\/joyful-faith-fills-congregants-bethel-rock-house-prayer-newark\/4373737001\/\n","description":"Narrative Journalism students investigate and report on Black lives in Newark in a series collaboration with the Newark Advocate and the NAACP.","image":"https:\/\/denison.edu\/sites\/default\/files\/news\/image\/2021\/af2b0cc17b614b099d72e7df592a8229_1.jpg"},{"title":"David Rose joins Denison as Director of Campus Safety","link":"https:\/\/denison.edu\/news-events\/featured\/140476","description":"Denison University announces David Rose will join the university as Director of Campus Safety beginning January 11, 2021.","image":"https:\/\/denison.edu\/sites\/default\/files\/news\/image\/2021\/image0_1.jpeg.jpg"}],"Athletics":[{"title":"Sideline Chat with Bobby Rahal \u002775","link":"https:\/\/denisonbigred.com\/news\/2021\/2\/18\/general-sideline-chat-with-bobby-rahal-75.aspx","description":"Enjoy a one hour interview with 3-time IndyCar champion and 1975 Denison graduate Bobby Rahal on our latest installment of the Denison Sideline Chat.","image":"https:\/\/denisonbigred.com\/common\/controls\/image_handler.aspx?thumb_prefix=rp_primary\u0026image_path=\/images\/2021\/2\/18\/rahal_indy_1986.jpg"},{"title":"Schedule Update","link":"https:\/\/denisonbigred.com\/news\/2021\/2\/12\/schedule-update.aspx","description":"Denison University men\u0027s and women\u0027s indoor track \u0026 field\u0027s season-opener has been canceled. Saturday\u0027s (Feb. 13) dual meet against the College of Wooster in Wooster, Ohio beginning at 11 a.m. will no longer take place. There is no official word on if the meet will be rescheduled.","image":"https:\/\/denisonbigred.com\/common\/controls\/image_handler.aspx?thumb_prefix=rp_primary\u0026image_path=\/images\/2021\/2\/6\/schedule_change2021.jpg"},{"title":"Reiner named NFL Big Data Bowl winner","link":"https:\/\/denisonbigred.com\/news\/2021\/2\/10\/general-reiner-named-nfl-big-data-bowl-winner.aspx","description":"GRANVILLE, Ohio \u2013 It is safe to say that hard work and determination have been the focus of sports and competition for many years. While that claim continues to ring true, the world of analytics and statistical data have become a large part of our sports culture, and those two worlds continue to come together, even for one of our own. On Friday, Feb. 5, Denison University junior and Denison Sports Network student assistant Jill Reiner was honored by the National Football League as one of three college-aged students to win the 2020-21 NFL Big Data Bowl.","image":"https:\/\/denisonbigred.com\/common\/controls\/image_handler.aspx?thumb_prefix=rp_primary\u0026image_path=\/images\/2021\/2\/10\/dsn_ReinerNFLBDB_020921.jpg"},{"title":"Denison Women in Sports Video Archive","link":"https:\/\/denisonbigred.com\/news\/2021\/2\/8\/general-denison-women-in-sports-video-archive.aspx","description":"","image":"https:\/\/denisonbigred.com\/common\/controls\/image_handler.aspx?thumb_prefix=rp_primary\u0026image_path=\/images\/2021\/1\/29\/bafd435e_bd55_495f_88a0_eb91cabe0162.jpg"},{"title":"Sideline Chat with Bobby Rahal \u002775","link":"https:\/\/denisonbigred.com\/news\/2021\/2\/2\/general-sideline-chat-with-bobby-rahal-75.aspx","description":"Join us at\u00a011 a.m.\u00a0EST on Thursday, February 11, for a special conversation with Denison Hall of Famer\u00a0Bobby Rahal \u002775\u00a0and\u00a0Brett Roubinek \u002787 on Zoom.","image":"https:\/\/denisonbigred.com\/common\/controls\/image_handler.aspx?thumb_prefix=rp_primary\u0026image_path=\/images\/2021\/2\/2\/rahal_roubinek_chat.jpg"}],"ITS":[{"title":"Planned Outage: Wireless Maintenance Campus Wide, Thurs. 2\/18\/21 5-7am","link":"https:\/\/netnotes.denison.edu\/planned-outage-wireless-maintenance-campus-wide-thurs-21821-5-7am\/","description":"ITS will be performing network maintenance on Thursday 2\/18\/21 from 5:00-7:00am which may result in the loss of the wireless network. Please do not edit files over the network or submit information online during this time period as your work may be lost when the network outages occur. This post will be updated when the [\u0026#8230;]","image":null},{"title":"Planned Change:  McAfee Endpoint Security upgrade on Denison-owned computers starting Thursday 02\/18\/21","link":"https:\/\/netnotes.denison.edu\/planned-change-mcafee-endpoint-security-upgrade-on-denison-owned-computers-starting-thursday-021821\/","description":"On 2\/18\/21, Information Technology Services (ITS) will release an upgrade to McAfee Endpoint Security on Denison-owned computers. This upgrade is silent and will not impact your ability to use your computer while it is happening. At some point during the upgrade process, you might notice a Windows\/Macintosh notification regarding your antivirus protection is off. It [\u0026#8230;]","image":null},{"title":"Planned Maintenance: Xtender Upgrade Beginning at 6:00 PM Friday, February 12th","link":"https:\/\/netnotes.denison.edu\/planned-maintenance-xtender-upgrade-beginning-at-600-pm-friday-february-12th\/","description":"Denison Information Technology Services (ITS) will be upgrading Xtender, the Banner Document Imaging System, beginning at 6:00 PM on Friday, February 12th, and will remain unavailable until 6:00 PM on Saturday, February 13th (a 24-hour maintenance). Users will not be able to store or retrieve documents during this maintenance period. ITS will be bringing down [\u0026#8230;]","image":null},{"title":"[COMPLETED] Planned Updates: Notebowl on Tuesday, February 9, 2021","link":"https:\/\/netnotes.denison.edu\/completed-planned-updates-notebowl-on-tuesday-february-9-2021\/","description":"At 4:12 am on February 9, 2021, Notebowl made the configuration updates listed below. User Settings: \u0026#8220;Nickname\u0026#8221; field was updated to \u0026#8220;Chosen Name\u0026#8221; Student Documentation Faculty Staff Documentation Course Settings: User type \u0026#8220;Observer\u0026#8221; was updated to \u0026#8220;AAA\u0026#8221; Course Settings: Professor role can add AAA role to courses FAQ:\u00a0How do I add TAs or AAAs to [\u0026#8230;]","image":null},{"title":"Planned interruptions for network drive access and printing on Thu. 2\/11\/21 between 4:00am and 7:30am","link":"https:\/\/netnotes.denison.edu\/planned-interruptions-for-network-drive-access-and-printing-on-thu-21121-between-400am-and-730am\/","description":"ITS is planning to perform maintenance on servers hosting shared network drives (PERSONAL, SHARED, MEDIA, SCRATCH, etc) on Thursday 2\/11\/21 between 4:00am and 7:30am. There will be short outages for the above network drives and printing while servers are rebooted to complete the maintenance. Please do not update files stored on the network file servers [\u0026#8230;]","image":null}],"Ohio":[{"title":"Coshocton family finally has a van for Dani thanks to Catholic Social Services","link":"https:\/\/www.dispatch.com\/news\/20200920\/coshocton-family-finally-has-van-for-dani-thanks-to-catholic-social-services?rssfeed=true","description":"COSHOCTON \u0026ndash; It was about a year ago that Kala Freeman decided to swallow her pride and ask for help in acquiring a wheelchair accessible van for her family.She and husband Bradley Barrick have a blended family of six kids, including 11-year-old Danielle \u0022Dani\u0022 Hardesty. Dani was diagnosed with cerebral palsy after contracting bacterial meningitis when just\u0026nbsp;2-months-old. She\u0026rsquo;s non-verbal and non-mobile. Dani is spastic and has daily seizures.Whenever [...]","image":null},{"title":"Ohio treasurer proposing $100 million in small business pandemic relief grants","link":"https:\/\/www.dispatch.com\/news\/20200919\/ohio-treasurer-proposing-100-million-in-small-business-pandemic-relief-grants?rssfeed=true","description":"AKRON \u0026ndash; Ohio\u0027s treasurer wants the state to set aside $100 million in federal pandemic relief funds to provide grants to struggling small businesses hurt by the coronavirus.The program needs to go through the General Assembly first, get approval by the DeWine administration and then be administered.And the clock is ticking: The money, which would come from federal aid already given to the state, must be allocated and spent by Dec. 31.Ohio Treasurer [...]","image":null},{"title":"DeWine gives $19,755 in campaign cash from HB 6 figures to food banks","link":"https:\/\/www.dispatch.com\/news\/20200918\/dewine-gives-19755-in-campaign-cash-from-hb-6-figures-to-food-banks?rssfeed=true","description":"The campaign of Gov. Mike DeWine has given $19,755 in political contributions from three men indicted in the House Bill 6 scandal to the Ohio Association of Foodbanks.The gift was disclosed after the Republican governor was questioned Thursday about his prior pledge to donate campaign contributions associated with those indicted to charity.DeWine-Husted for Ohio donated $13,255 orginally received from Matt Borges, $6,000 from Juan Cespedes and $500 from Jeff Longstreth [...]","image":null},{"title":"Instructor at UC under investigation for calling COVID-19 \u0027the Chinese virus\u0027","link":"https:\/\/www.dispatch.com\/news\/20200918\/instructor-at-uc-under-investigation-for-calling-covid-19-the-chinese-virus?rssfeed=true","description":"A University of Cincinnati dean is investigating an email to an engineering student\u0026nbsp;in which an adjunct instructor is accused of referring to the novel coronavirus as \u0022the Chinese virus.\u0022 The email came after the student had to miss a lab session due to being quarantined for possible exposure to the novel coronavirus.\u0022I think that the school should take disciplinary actions against the professor\u0026nbsp;because (his)\u0026nbsp;actions completely violate the school\u0027s values,\u0022 20-year- [...]","image":null},{"title":"Justices annoyed Ohio prosecutors boycotting bid to prevent wrongful convictions","link":"https:\/\/www.dispatch.com\/news\/20200918\/justices-annoyed-ohio-prosecutors-boycotting-bid-to-prevent-wrongful-convictions?rssfeed=true","description":"To the annoyance of Ohio Supreme Court justices, county prosecutors are refusing to take part on a task force reviewing how to prevent and reverse criminal convictions wrongfully won by prosecutors.The Ohio Prosecuting Attorneys Association and its two high court-appointed representatives backed out of the first virtual meeting Thursday of the Task Force on Conviction Integrity and Postconviction Review. [...]","image":null}],"US":[{"title":"Covid-19 News: Live Updates","link":"https:\/\/www.nytimes.com\/2020\/09\/22\/world\/covid-19-coronavirus.html","description":"The swift march toward a vaccine has not included trials for children, which means they will have to wait longer than adults.","image":"https:\/\/static01.nyt.com\/images\/2020\/08\/03\/us\/us-briefing-promo-image-print\/us-briefing-promo-image-moth.jpg"},{"title":"China Sentences Ren Zhiqiang, Tycoon Who Criticized Xi, to 18 Years in Prison","link":"https:\/\/www.nytimes.com\/2020\/09\/22\/world\/asia\/china-ren-zhiqiang-tycoon.html","description":"The Communist Party accused Ren Zhiqiang of being disloyal. His lengthy sentence underscores Xi Jinping\u2019s crackdown on dissent among the elite.","image":"https:\/\/static01.nyt.com\/images\/2020\/09\/22\/world\/22china-tycoon-1\/22china-tycoon-1-moth.jpg"},{"title":"For Young People\u2019s Sexual Health, the Pandemic Changes the Game","link":"https:\/\/www.nytimes.com\/2020\/09\/21\/well\/family\/for-young-peoples-sexual-health-the-pandemic-changes-the-game.html","description":"The pandemic may offer opportunities to help adolescents and young adults make good decisions regarding sexual and social behavior.","image":"https:\/\/static01.nyt.com\/images\/2020\/09\/21\/well\/21KLASS-TEENS\/21KLASS-TEENS-moth.jpg"},{"title":"The Fall Surge Is Here","link":"https:\/\/www.nytimes.com\/2020\/09\/22\/briefing\/schools-supreme-court-china-your-tuesday-briefing.html","description":"And what else you need to know today.","image":"https:\/\/static01.nyt.com\/images\/2020\/09\/21\/briefing\/22AMBRIEFING-promo\/22AMBRIEFING-lede-moth.jpg"},{"title":"Bringing the Ocean\u2019s Midnight Zone Into the Light","link":"https:\/\/www.nytimes.com\/2020\/09\/22\/science\/monterey-bay-aquarium-midnight-zone.html","description":"The Monterey Bay Aquarium has learned how to raise the deepest sea life to the surface and keep it alive for display.","image":null}],"World":[{"title":"John Lennon killer says sorry for \u0027despicable act\u0027","link":"https:\/\/www.bbc.co.uk\/news\/entertainment-arts-54246444","description":"Mark Chapman has apologised to the late Beatle\u0027s widow, Yoko Ono, for his murder in 1980.","image":null},{"title":"Two men arrested over rape of nine-year-old girl in rural France","link":"https:\/\/www.bbc.co.uk\/news\/world-europe-54247764","description":"The victim, a nine-year-old girl, was kidnapped and attacked in Villiers in western France.","image":null},{"title":"Nasa outlines plan for first woman on Moon by 2024","link":"https:\/\/www.bbc.co.uk\/news\/science-environment-54246485","description":"The US space agency (Nasa) formally outlines its $28bn plan to return astronauts to the Moon by 2024.","image":null},{"title":"FinCEN Files: UK bank may have moved money \u0027linked to terror activity\u0027","link":"https:\/\/www.bbc.co.uk\/news\/world-middle-east-54235202","description":"Leaked documents show Standard Chartered moved funds that may have been linked to terror financing.","image":null},{"title":"FinCEN: Why gold in your phone could be funding drug gangs","link":"https:\/\/www.bbc.co.uk\/news\/business-54238918","description":"Gold from a refiner used by criminals to launder drug money has entered supply chains for smartphones and cars.","image":null}]}},"featured_events":{"events":[{"title":"Senior Class Gift ","nid":7392,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/1%20%281%29.png?itok=jzi3s-ZP\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/senior-class-gift-"},{"title":"Red Frame Consulting Studio","nid":8288,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Add%20a%20little%20bit%20of%20body%20text-4-2.jpg?itok=BG0T4s4z\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/red-frame-consulting-studio"},{"title":"Columbus Creative in Residence Marshall Shorts","nid":8237,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/marshall%20shorts%20ccir.jpg?itok=kkpU5t0s\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/columbus-creative-in-residence-marshall-shorts"},{"title":"Work in Progress - Studio Art Faculty and Staff Exhibition","nid":8240,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/FullSizeRender_0.jpg?itok=4zVNl36S\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/work-in-progress---studio-art-faculty-and-staff-exhibition"},{"title":"GC Executive Speaker Series: David Hirsh \/ CEO, Atrium Corp.","nid":8243,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/GC%20Exec%20Speaker%20Series%20David%20Hirsh.png?itok=S2vE4m4h\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/gc-executive-speaker-series-david-hirsh---ceo-atrium-corp"},{"title":"DSO poster","nid":8249,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/dso%20leader%20poster.png?itok=J8pXMAVT\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/dso-poster"},{"title":"Agape Christian Fellowship: Past Meets Present: Alumni Panel Discussion","nid":8252,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Agape.jpg?itok=jgtDR6Xd\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/agape-christian-fellowship-past-meets-present-alumni-panel-discussion"},{"title":"GC Whit\u0027s Wednesday: \u0022What is Racial Capitalism?\u0022","nid":8273,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/2.17%20Whits%20Wednesday_%20Racial%20Capitalism.jpg?itok=2ccAe9OM\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/gc-whits-wednesday-what-is-racial-capitalism"},{"title":"Affordable Health Insurance Webinar","nid":8291,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/This%20Wednesday%2C%20Feb%2017th%20in%20the%20Red%20Frame%20Lab%20at%20noonEDT.jpg?itok=ONV6KxiS\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/affordable-health-insurance-webinar"},{"title":"Wellness Wednesdays","nid":8225,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Wellness%20Wednesdays%20%281%29.png?itok=0UDnau9e\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/wellness-wednesdays"},{"title":"Denison Arts Orientation in Columbus 2021","nid":8297,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/DAO2021Poster.jpg?itok=rn3aR7ul\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/denison-arts-orientation-in-columbus-2021"},{"title":"Moving Resiliency: A Screendance Festival","nid":8303,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/ScreenDance%20Festival%20Final%20Flyer.png?itok=W4SI5DbH\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/moving-resiliency-a-screendance-festival"},{"title":"Rachel Rose: Lake Valley","nid":8312,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/rachel%20rose%20ad.jpg?itok=grlVZyAQ\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/rachel-rose-lake-valley"},{"title":"Koru Mindfulness March","nid":8315,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Abby%20and%20Koru.JPG?itok=wPP4jMcr\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/koru-mindfulness-march"},{"title":"QPR Virtual Trainings","nid":8328,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/QPR%20Suicide%20Prevention%20Gatekeeper%20Training%20%281%29.png?itok=UOD93bdJ\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/qpr-virtual-trainings"},{"title":"Ten Years to Arab Uprisings. The First Middle East Film Festival 2021","nid":8331,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/MENA%20Film%20Festival%20Poster.jpg?itok=kLf9fClg\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/ten-years-to-arab-uprisings-the-first-middle-east-film-festival-2021"},{"title":"Conversation with Aldridge\/Zirin","nid":8228,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Conversation%20with%20DaldridgeZirin.jpg?itok=1H0yB_R2\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/conversation-with-aldridge-zirin"},{"title":"Beck Series Spring 2021 Poster","nid":8222,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Spring%20Series%202021%20POSTER.jpg?itok=Z6czkBiv\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/beck-series-spring-2021-poster"},{"title":"Interviews for Senior Activism Project","nid":7674,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Seeking%20students%2C%20faculty%2C%20and%20staff%20for%20a%20student%20senior%20activism%20project.%20Interview%20questions%20will%20discuss_%20-definitions%20and%20experiences%20of%20disability%2C%20accessibility%2C%20and%20inclusivity%20-campus%20support%20-campus%20accessi.png?itok=plMHt37A\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/interviews-for-senior-activism-project"},{"title":"21 Day Racial Equity Habit Building Challenge ","nid":8078,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Racial%20Equity%20Challenge%20Flyer%20v2.png?itok=hpQt1pHG\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/_1-day-racial-equity-habit-building-challenge-"},{"title":"2021 Community Health Coach Program","nid":7901,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/2021%20Community%20Health%20Coach%20Program.jpg?itok=UE1Umlmh\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/_021-community-health-coach-program"},{"title":"Koru training","nid":7937,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/February%20MIndfulness%20class.JPG?itok=iWYBHQGe\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/koru-training"},{"title":"Paws and Relax (therapy dogs)","nid":8021,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Adopt%2C%20Don%27t%20Buy%20%281%29.png?itok=INAPPPBu\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/paws-and-relax-therapy-dogs"},{"title":"Blood Drive February","nid":8024,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Blood%20drive%20february.JPG?itok=Qz0sBCGN\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/blood-drive-february"},{"title":"Productivity Circle","nid":8033,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Productivity%20Circle%20Spring%2021%20.png?itok=bMAoaEsE\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/productivity-circle"},{"title":"Global Ambassadors - Apply Today!","nid":8051,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Global%20Ambassadors%20-%20ISS%20Newsletter.png?itok=MTpsBJ-G\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/global-ambassadors---apply-today"},{"title":"RedTech Recruitment","nid":8081,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/redtech%20flier.png?itok=fvNneFZC\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/redtech-recruitment"},{"title":"Love Languages \u0026 Boundaries Featuring Spoken Word Artist Tyiesha Radford Shorts","nid":8195,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/blw%20day%202_1.png?itok=E-b3ZUrT\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/love-languages--boundaries-featuring-spoken-word-artist-tyiesha-radford-shorts"},{"title":"Narrative Journalism and Between Coasts welcome The New Storytellers series","nid":8090,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Poster%20New%20Storytellers%20%28public%29.png?itok=JV947UMb\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/narrative-journalism-and-between-coasts-welcome-the-new-storytellers-series"},{"title":"Red StartUp Studio","nid":8141,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Screen%20Shot%202021-02-05%20at%2011.29.25%20AM.png?itok=dkd75Xja\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/red-startup-studio"},{"title":"MLK Event: A Conversation with Dr. Danielle Allen","nid":8147,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/DanielleAllenPoster.jpg?itok=8UNloTJE\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/mlk-event-a-conversation-with-dr-danielle-allen"},{"title":"Food Recovery Network","nid":8156,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/FRN%20poster.png?itok=frijdHvo\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/food-recovery-network"},{"title":"Lunar New Year","nid":8159,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/A1982232-6701-4787-92AF-254062BABB13.png?itok=wdEpAChR\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/lunar-new-year"},{"title":"Summer Scholars Applications Due March 1, 2021","nid":8171,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/Summer%20Scholars%20Social%20Media%20%231.png?itok=H4kt4-c4\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/summer-scholars-applications-due-march-1-2021"},{"title":"We Represent Virtual International Exchange Conference","nid":8174,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/2Promo.png?itok=mjt9QA84\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/we-represent-virtual-international-exchange-conference"},{"title":"Mindfulness Club","nid":8334,"unpublish_on":1614297600,"image":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/my.denison.edu\/sites\/default\/files\/styles\/featured_event_poster\/public\/posters\/weekly%20meditations.png?itok=d98yF7vz\u0022 \/\u003E","field_url":"http:\/\/my.denison.edu\/feature\/mindfulness-club"}],"form":{"unpublish_date":"2021-03-05"}},"campus_directory":{"user":{"classYear":"2024","confidential":false,"departmentName":null,"dnumber":"D01928433","dormAddress":"Curtis East Hall Rm: 206","email":"le_w1@denison.edu","fullname":"Minh Anh Le","firstName":"Minh","lastName":"Le","hasOverride":false,"homeAddress":"48 Duong So 83 Phuong Thanh My Loi Quan 2 Ho Chi Minh City Ho Chi Minh City Vietnam","homePhone":null,"jobTitle":null,"labPhone":null,"officeLocation":null,"officePhone":null,"photoLocation":"","showDormAddress":true,"showEmail":true,"showHomeAddress":false,"showHomePhone":true,"showLabPhone":true,"showOfficePhone":true,"showPhoto":true,"showSlayterBox":true,"showSpouse":true,"slayterBox":"7345","spouse":null,"username":"le_w1"},"searchTerm":null,"resultsOpen":true},"campus_events":{"events":{"today":[{"title":"DCGA Finance Committee Meeting","link":"https:\/\/events.denison.edu\/MasterCalendar\/EventDetails.aspx?data=hHr80o3M7J7F96rsAs7Lu0SUDF1PMleHiSz3SXMGPKJo6sXS7nEZg4VtMIj4pvNC5tQZHMuc4s0%3d","description":" 7:30 PM to 9:00 PM - Higley Hall Room 105 Auditorium: DCGA\u0027s Finance Committee meets weekly from 7:30-9pm. We would love to be able to meet in a large space with a computer and projector to allow for social distancing. During our meetings we review\/discuss budget requests from student organizations, and have the responsibility of allocating the annual student activity fee, which is around $800, across all student organizations. We have a great team this year and are excited for the important work ahead. It would be great to be able to meet in the Higley Auditorium.","date_formatted":"Feb. 18, 2021 7:30 PM","image":null},{"title":"Work in Progress - Studio Art Faculty and Staff Exhibition","link":"https:\/\/events.denison.edu\/MasterCalendar\/EventDetails.aspx?data=hHr80o3M7J4PqKkhu3Dm39qrhsL9CHGPTBBGkBc5j3XcRDnBEj1pmN2hjb0rZ9%2fsZ2M2LsM3mxc%3d","description":" 10:00 AM to 4:00 PM - Bryant Arts Center Gallery 403: Featuring the works of Ron Abram, Justin Coleman, Ivy Distler, Christian Faur, Sheilah ReStack, Keith Spencer, and Micaela Vivero ","date_formatted":"Feb. 19, 2021 10:00 AM","image":"https:\/\/events.denison.edu\/MasterCalendar\/imagewriter.aspx?imageId=3195"},{"title":"Stories on the Hill Meeting","link":"https:\/\/events.denison.edu\/MasterCalendar\/EventDetails.aspx?data=hHr80o3M7J4N4N%2btxNA5T2T5ivyvwxh%2bfjZQviwY8ivpCGS7dSdHvjXCQi8exFoLNR8J72AGuEU%3d","description":" 5:00 PM to 6:15 PM - Higley Hall Room 105 Auditorium: Weekly meeting of Stories on the Hill, a DCA Service Committee where members record themselves reading books, stories, or poems in the public domain. The recordings are then sent to community organizations such as libraries, community centers, and nursing homes for the people there to enjoy.All are welcome to attend; contact pfiste_g1@denison.edu to learn more!","date_formatted":"Feb. 19, 2021 5:00 PM","image":"https:\/\/events.denison.edu\/MasterCalendar\/imagewriter.aspx?imageId=3204"},{"title":"Anime Club Weekly Meeting","link":"https:\/\/events.denison.edu\/MasterCalendar\/EventDetails.aspx?data=hHr80o3M7J7ZlQ5AMLHPIZtpFs2PozoEOVDzgJzMyKesAgayb1kv0wDHXbNqazPmzY4kjVmw1iI%3d","description":" 6:30 PM to 10:00 PM - Higley Hall:  Weekly Meeting for Anime Club","date_formatted":"Feb. 19, 2021 6:30 PM","image":null}],"tomorrow":[]}},"user":{"uid":"10310","permissionsHash":"ebbe1347dac591e3617933cfc8eacc4972d98c5ea507dd3e0ed05a5abb24ec37"}}</script>
+
+<!--[if lte IE 9]>
+<script src="/sites/default/files/js/js_VhqXmo4azheUjYC30rijnR_Dddo0WjWkF27k5gTL8S4.js"></script>
+<![endif]-->
+<script src="/sites/default/files/js/js_Td9Eoc_K9Fmev21XFHEMO3vXPuL_iSqvz9vi4wnXvLk.js"></script>
+
+  
+
+</body></html>

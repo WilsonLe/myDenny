@@ -12,7 +12,7 @@ const getHTML = async () => {
 		});
 		const page = await browser.newPage();
 		await page.goto(process.env.URL);
-		await page.type('#username', process.env.USERNAME);
+		await page.type('#username', 'le_w1');
 		await page.type('#password', process.env.PASSWORD);
 		await page.click('button[type="submit"]');
 
