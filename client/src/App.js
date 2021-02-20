@@ -4,10 +4,10 @@ import styled, { createGlobalStyle } from 'styled-components';
 import fetchLinks from './utils/fetchLinks';
 
 const App = () => {
-	const [links, setLinks] = useState(
-		JSON.parse(localStorage.getItem('links')) || fetchLinks()
-	);
-	console.log(links);
+	// const [links, setLinks] = useState(
+	// 	JSON.parse(localStorage.getItem('links')) || fetchLinks()
+	// );
+	fetchLinks().then((links) => console.log(links));
 	return (
 		<React.Fragment>
 			<GlobalStyle />
@@ -15,6 +15,7 @@ const App = () => {
 		</React.Fragment>
 	);
 };
+
 const GlobalStyle = createGlobalStyle`
 	* {
 		padding: 0;
@@ -26,4 +27,5 @@ const GlobalStyle = createGlobalStyle`
 		overflow: scroll;
 	}
 `;
+
 export default App;

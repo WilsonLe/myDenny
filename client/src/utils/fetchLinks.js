@@ -1,9 +1,12 @@
 import axios from 'axios';
 const fetchLinks = async () => {
-	let links = [];
+	console.log('a');
 	try {
-		return links;
-	} catch (error) {}
+		const res = await axios.get('/api/links');
+		return res.data;
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 export default fetchLinks;
