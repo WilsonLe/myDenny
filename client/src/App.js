@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import fetchLinks from './utils/fetchLinks';
 
 const App = () => {
-	// const [links, setLinks] = useState(
-	// 	JSON.parse(localStorage.getItem('links')) || fetchLinks()
-	// );
-	fetchLinks().then((links) => console.log(links));
+	const [links, setLinks] = useState();
+	useEffect(() => {
+		(async () => {
+			let links = await fetchLinks();
+			console.log(links);
+		})();
+	}, []);
 	return (
 		<React.Fragment>
 			<GlobalStyle />
