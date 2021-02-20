@@ -7,7 +7,6 @@ const Link = require('../models/Link');
 
 const sendLinks = async (req, res) => {
 	const links = await Link.find();
-	console.log(links);
 	return res.json(links);
 };
 

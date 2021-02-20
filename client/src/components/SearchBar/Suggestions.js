@@ -5,7 +5,12 @@ const Suggestions = ({ linkShown, setQuery }) => {
 	return (
 		<SuggestionsContainer>
 			{linkShown.map((link) => (
-				<SuggestionBox onClick={() => setQuery(link.text)}>
+				<SuggestionBox
+					onClick={(e) => {
+						setQuery(link.text);
+						window.open(link.url, '_blank');
+					}}
+				>
 					{link.text}
 				</SuggestionBox>
 			))}

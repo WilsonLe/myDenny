@@ -19,10 +19,10 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
-		filterDishes();
+		filterSuggestions();
 	}, [query]);
 
-	const filterDishes = () => {
+	const filterSuggestions = () => {
 		let linkTextRegex = new RegExp(query, 'i');
 		if (query.length > 0) {
 			let newLinks = [...links].filter((link) =>

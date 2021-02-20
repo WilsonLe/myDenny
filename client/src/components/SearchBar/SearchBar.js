@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Suggestions from './Suggestions';
 
 const SearchBar = ({ query, setQuery, linkShown }) => {
+	console.log(linkShown);
 	const handleXClick = () => {
 		setQuery('');
 	};
