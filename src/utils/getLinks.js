@@ -7,9 +7,9 @@ const getLinks = (html) => {
 		const linkTag = html.substring(startIndex, endIndex);
 		const linkEle = parse(linkTag).childNodes[0];
 		// console.log(linkEle);
-		const href = linkEle.getAttribute('href');
+		const url = linkEle.getAttribute('href');
 		const text = linkEle.textContent;
-		links.push({ href, text });
+		links.push({ url, text });
 		html = html.substring(endIndex);
 	}
 	return links;

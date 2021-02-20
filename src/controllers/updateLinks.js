@@ -2,11 +2,13 @@ require('dotenv').config();
 
 const Link = require('../models/Link');
 
-const updateLinks = (links) => {
-	// const newAdmin = new Admin({
-	// 	email,
-	// 	password,
-	// });
+const updateLinks = async (links) => {
+	try {
+		const res = await Link.insertMany(links, { ordered: false });
+		console.log(res);
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 module.exports = updateLinks;

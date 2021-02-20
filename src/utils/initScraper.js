@@ -2,6 +2,7 @@ const fs = require('fs');
 const getHTML = require('./getHTML');
 const getLinks = require('./getLinks');
 const cleanLinks = require('./cleanLinks');
+const updateLinks = require('../controllers/updateLinks');
 require('dotenv').config();
 
 const initScraper = async () => {
@@ -9,7 +10,7 @@ const initScraper = async () => {
 		fs.readFile('html.txt', 'utf8', (err, html) => {
 			let links = getLinks(html);
 			links = cleanLinks(links);
-			// console.log(links);
+			updateLinks(links);
 		});
 	} else {
 		html = await getHTML();
