@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Schema config
 const schemaFields = {
-	url: String,
+	url: { type: String, unique: true, required: true },
 	text: String,
 };
 

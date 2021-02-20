@@ -10,6 +10,9 @@ const initExpress = () => {
 	app.use(express.json());
 	process.env.NODE_ENV === 'production' && app.use(toHTTPS());
 
+	// api
+	app.use('/api/links', require('../routes/api/links'));
+
 	// serve
 	app.use(express.static('client/build'));
 	app.get('*', (req, res) =>
