@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const Link = require('../models/Link');
+const Link = require('../../models/Link');
 
 const updateLinks = async (links) => {
 	try {

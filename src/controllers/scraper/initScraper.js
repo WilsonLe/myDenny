@@ -2,7 +2,7 @@ const fs = require('fs');
 const getHTML = require('./getHTML');
 const extractLinks = require('./extractLinks');
 const cleanLinks = require('./cleanLinks');
-const updateLinks = require('../updateLinks');
+const updateLinks = require('./updateLinks');
 require('dotenv').config();
 
 const initScraper = async () => {
