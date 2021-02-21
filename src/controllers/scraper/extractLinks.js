@@ -1,5 +1,5 @@
 const { parse } = require('node-html-parser');
-const getLinks = (html) => {
+const extractLinks = (html) => {
 	let links = [];
 	while (html.search('<a') != -1) {
 		const startIndex = html.search('<a');
@@ -15,4 +15,4 @@ const getLinks = (html) => {
 	return links;
 };
 
-module.exports = getLinks;
+module.exports = extractLinks;

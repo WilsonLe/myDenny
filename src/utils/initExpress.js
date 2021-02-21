@@ -12,6 +12,10 @@ const initExpress = () => {
 
 	// api
 	app.use('/api/links', require('../routes/api/links'));
+	app.use('/api/auth', require('../routes/api/auth'));
+	app.use('/api/scrape', require('../routes/api/scrape'));
+	if (process.env.NODE_ENV === 'development')
+		app.use('/api/reg', require('../routes/api/reg'));
 
 	// serve
 	app.use(express.static('client/build'));

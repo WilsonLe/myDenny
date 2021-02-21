@@ -1,14 +1,16 @@
 const fs = require('fs');
 const getHTML = require('./getHTML');
-const getLinks = require('./getLinks');
+const extractLinks = require('./extractLinks');
 const cleanLinks = require('./cleanLinks');
-const updateLinks = require('../controllers/updateLinks');
+const updateLinks = require('../updateLinks');
 require('dotenv').config();
 
 const initScraper = async () => {
-	if (process.env.NODE_ENV === 'test') {
+	if (process.env.NODE_ENV === 'development') {
 		fs.readFile('html.txt', 'utf8', (err, html) => {
-			let links = getLinks(html);
+			if (err) return console.log(err);
+			console.log(html);
+			let links = extractLinks(html);
 			links = cleanLinks(links);
 			updateLinks(links);
 		});

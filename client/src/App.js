@@ -1,48 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import SearchBar from './components/SearchBar/SearchBar';
-
-import fetchLinks from './utils/fetchLinks';
+import Admin from './components/Admin/Admin';
+import MyDenny from './components/MyDenny/MyDenny';
 
 const App = () => {
-	const [links, setLinks] = useState([]);
-	const [query, setQuery] = useState('');
-	const [linkShown, setLinkShown] = useState([]);
-
-	useEffect(() => {
-		(async () => {
-			let links = await fetchLinks();
-			setLinks(links);
-			setLinkShown([...links]);
-		})();
-	}, []);
-
-	useEffect(() => {
-		filterSuggestions();
-	}, [query]);
-
-	const filterSuggestions = () => {
-		let linkTextRegex = new RegExp(query, 'i');
-		if (query.length > 0) {
-			let newLinks = [...links].filter((link) =>
-				linkTextRegex.test(link.text)
-			);
-			setLinkShown(newLinks);
-		} else if (query.length === 0) {
-			setLinkShown([...links]);
-		}
-	};
-
 	return (
-		<React.Fragment>
+		<Router>
 			<GlobalStyle />
-			<SearchBar
-				query={query}
-				setQuery={setQuery}
-				linkShown={linkShown}
-			/>
-		</React.Fragment>
+			<AppContainer>
+				<Switch>
+					<Route exact path={'/admin'} component={Admin} />
+					<Route exact path={'/'} component={MyDenny} />
+				</Switch>
+			</AppContainer>
+		</Router>
 	);
 };
 
@@ -57,5 +30,7 @@ const GlobalStyle = createGlobalStyle`
 		overflow: scroll;
 	}
 `;
+
+const AppContainer = styled.div``;
 
 export default App;
