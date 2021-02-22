@@ -12,7 +12,7 @@ const getHTML = async () => {
 		});
 		const page = await browser.newPage();
 		await page.goto(process.env.URL);
-		await page.type('#username', 'le_w1');
+		await page.type('#username', process.env.USERNAME);
 		await page.type('#password', process.env.PASSWORD);
 		await page.click('button[type="submit"]');
 
@@ -26,6 +26,7 @@ const getHTML = async () => {
 			'#auth_methods > fieldset > div.row-label.push-label > button'
 		);
 		await page.waitForSelector('#mydenison-header');
+		
 		const html = await page.content();
 		// browser.close();
 		return html;

@@ -2,23 +2,16 @@ const fs = require('fs');
 const getHTML = require('./getHTML');
 const extractLinks = require('./extractLinks');
 const cleanLinks = require('./cleanLinks');
+const compareLinks = require('./compareLinks');
 const updateLinks = require('./updateLinks');
 require('dotenv').config();
 
 const initScraper = async () => {
-	if (process.env.NODE_ENV === 'development') {
-		fs.readFile('html.txt', 'utf8', (err, html) => {
-			if (err) return console.log(err);
-			console.log(html);
-			let links = extractLinks(html);
-			links = cleanLinks(links);
-			updateLinks(links);
-		});
-	} else {
-		html = await getHTML();
-		fs.writeFile('html.txt', html, () => console.log('written to file'));
-		// const links = getLinks(html);
-	}
+	const html = await getHTML();
+	let links = extractLinks(html); // Add while loop to fetch all links.
+	links = cleanLinks(links);
+	const changes = await compareLinks(links); // Add comparison algo
+	await updateLinks(changes);
 };
 
 module.exports = initScraper;
