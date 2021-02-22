@@ -3,11 +3,20 @@ require('dotenv').config();
 const Link = require('../../models/Link');
 
 const compareLinks = async (newLinks) => {
-	let changes = [];
+	let additions = [];
+	let removals = [];
 	const oldLinks = await Link.find();
-	const oldHref = oldLinks.map((oldLink) => oldLink.url);
-	console.log(oldHref);
-	return changes;
+	const oldUrls = oldLinks.map((oldLink) => oldLink.url);
+	const newUrls = newLinks.map((newLink) => newLink.url);
+
+	newLinks.forEach((newLink) => {
+		if (!oldUrls.includes(newLink.url)) additions.push(newLink);
+	});
+
+	oldLinks.forEach((oldLink) => {
+		if (!newUrls.includes(oldLink.url)) removals.push(oldLink);
+	});
+	return { additions, removals };
 };
 
 module.exports = compareLinks;

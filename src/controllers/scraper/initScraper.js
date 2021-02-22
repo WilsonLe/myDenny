@@ -11,7 +11,8 @@ const initScraper = async () => {
 	let links = extractLinks(html); // Add while loop to fetch all links.
 	links = cleanLinks(links);
 	const changes = await compareLinks(links); // Add comparison algo
-	await updateLinks(changes);
+	console.log(changes);
+	// await updateLinks(changes); // Add update algo
 };
 
 module.exports = initScraper;
