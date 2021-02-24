@@ -1,9 +1,8 @@
 require('dotenv').config();
-const fetchHomePageLinks = async (browser) => {
+const fetchHomePageLinks = async (page) => {
 	let homePageLinks = [];
 
 	try {
-		const page = await browser.newPage();
 		await page.goto(process.env.BASE_URL);
 		await page.type('#username', process.env.NAME);
 		await page.type('#password', process.env.PASSWORD);

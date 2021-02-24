@@ -1,9 +1,8 @@
 require('dotenv').config();
-const fetchHomePageLinks = async (browser, url) => {
+const fetchHomePageLinks = async (page, url) => {
 	let pageLinks = [];
 
 	try {
-		const page = await browser.newPage();
 		await page.goto(url);
 
 		await (() => new Promise((res) => setTimeout(res, 3000)))();
@@ -18,7 +17,6 @@ const fetchHomePageLinks = async (browser, url) => {
 			const url = await page.evaluate((el) => el.href, linkHandle);
 			pageLinks.push({ text, url });
 		}
-		await page.close();
 		return pageLinks;
 	} catch (error) {
 		console.log(error);

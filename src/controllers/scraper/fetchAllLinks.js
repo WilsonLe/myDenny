@@ -28,9 +28,11 @@ const fetchAllLinks = async () => {
 			'--disable-features=IsolateOrigins,site-per-process',
 		],
 	});
+	const page = await browser.newPage();
+
 	let prevLinksList = [];
 	let currLinksList = [];
-	const homePageLinks = await fetchHomePageLinks(browser);
+	const homePageLinks = await fetchHomePageLinks(page);
 	currLinksList = [...homePageLinks];
 
 	while (compareArray(prevLinksList, currLinksList) == 'not identical') {
@@ -40,7 +42,7 @@ const fetchAllLinks = async () => {
 			currLink = currLinksList[i];
 			if (currLink.url.startsWith('http')) {
 				const fetchedLinks = await fetchLinksFromUrl(
-					browser,
+					page,
 					currLink.url
 				);
 				fetchedLinks.forEach((fetchedLink) =>
