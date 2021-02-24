@@ -1,17 +1,9 @@
-const puppeteer = require('puppeteer');
 require('dotenv').config();
-const getHTML = async () => {
+const fetchHomePageLinks = async (browser) => {
+	let homePageLinks = [];
 	try {
-		const browser = await puppeteer.launch({
-			headless: false,
-			slowMo: 25,
-			args: [
-				'--disable-web-security',
-				'--disable-features=IsolateOrigins,site-per-process',
-			],
-		});
 		const page = await browser.newPage();
-		await page.goto(process.env.URL);
+		await page.goto(process.env.BASE_URL);
 		await page.type('#username', process.env.USERNAME);
 		await page.type('#password', process.env.PASSWORD);
 		await page.click('button[type="submit"]');
@@ -25,14 +17,28 @@ const getHTML = async () => {
 		await frame.click(
 			'#auth_methods > fieldset > div.row-label.push-label > button'
 		);
+
 		await page.waitForSelector('#mydenison-header');
-		
-		const html = await page.content();
-		// browser.close();
-		return html;
+
+		console.log('Loged in');
+
+		const links = await page.$$('a');
+		links.forEach((link) => {
+			console.log(link);
+			let text = link.textContent;
+			text = text.replace(/\s+/g, ' ').trim();
+			let url = link.href;
+			homePageLinks.push({ text, url });
+		});
+		return homePageLinks;
+		// const html = await page.content();
+
+		// await page.close();
+
+		// return html;
 	} catch (error) {
 		console.log(error);
 	}
 };
 
-module.exports = getHTML;
+module.exports = fetchHomePageLinks;

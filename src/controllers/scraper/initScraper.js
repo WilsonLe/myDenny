@@ -1,18 +1,14 @@
-const fs = require('fs');
-const getHTML = require('./getHTML');
-const extractLinks = require('./extractLinks');
-const cleanLinks = require('./cleanLinks');
+const fetchAllLinks = require('./fetchAllLinks');
 const compareLinks = require('./compareLinks');
 const updateLinks = require('./updateLinks');
+const fetchHomePageLinks = require('./fetchHomePageLinks');
+const puppeteer = require('puppeteer');
+
 require('dotenv').config();
 
 const initScraper = async () => {
-	const html = await getHTML();
-	let links = extractLinks(html); // Add while loop to fetch all links.
-	links = cleanLinks(links);
-	const changes = await compareLinks(links); // Add comparison algo
-	console.log(changes);
-	// await updateLinks(changes); // Add update algo
+	const allCurrLinks = await fetchAllLinks();
+	console.log('All links length: ' + allCurrLinks.length);
 };
 
 module.exports = initScraper;
