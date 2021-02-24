@@ -3,6 +3,7 @@ const cleanLinks = require('./cleanLinks');
 const compareLinks = require('./compareLinks');
 const updateLinks = require('./updateLinks');
 const fetchHomePageLinks = require('./fetchHomePageLinks');
+const fetchLinksFromUrl = require('./fetchLinksFromUrl');
 const puppeteer = require('puppeteer');
 
 require('dotenv').config();
@@ -30,7 +31,6 @@ const fetchAllLinks = async () => {
 	let prevLinksList = [];
 	let currLinksList = [];
 	const homePageLinks = await fetchHomePageLinks(browser);
-	console.log(homePageLinks);
 	currLinksList = [...homePageLinks];
 
 	while (compareArray(prevLinksList, currLinksList) == 'not identical') {
@@ -39,12 +39,12 @@ const fetchAllLinks = async () => {
 		for (let i = 0; i < currLinksList.length; i++) {
 			currLink = currLinksList[i];
 			if (currLink.url.startsWith('http')) {
-				const fetchedHtml = await getHtmlFromURl(browser, currLink.url);
-				const linksFromFetchedHTML = cleanLinks(
-					extractLinks(fetchedHtml)
+				const fetchedLinks = await fetchLinksFromUrl(
+					browser,
+					currLink.url
 				);
-				linksFromFetchedHTML.forEach((link) =>
-					nextLinksList.push(link)
+				fetchedLinks.forEach((fetchedLink) =>
+					nextLinksList.push(fetchedLink)
 				);
 			}
 			console.log('ADDED NEW LINKS IN ' + currLink.url);
