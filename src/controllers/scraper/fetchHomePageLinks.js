@@ -1,10 +1,11 @@
 require('dotenv').config();
 const fetchHomePageLinks = async (browser) => {
 	let homePageLinks = [];
+
 	try {
 		const page = await browser.newPage();
 		await page.goto(process.env.BASE_URL);
-		await page.type('#username', process.env.USERNAME);
+		await page.type('#username', process.env.NAME);
 		await page.type('#password', process.env.PASSWORD);
 		await page.click('button[type="submit"]');
 
@@ -22,20 +23,17 @@ const fetchHomePageLinks = async (browser) => {
 
 		console.log('Loged in');
 
-		const links = await page.$$('a');
-		links.forEach((link) => {
-			console.log(link);
-			let text = link.textContent;
-			text = text.replace(/\s+/g, ' ').trim();
-			let url = link.href;
+		const linksHandle = await page.$$('a');
+		for (let i = 0; i < linksHandle.length; i++) {
+			const linkHandle = linksHandle[i];
+			const text = await page.evaluate(
+				(el) => el.textContent,
+				linkHandle
+			);
+			const url = await page.evaluate((el) => el.href, linkHandle);
 			homePageLinks.push({ text, url });
-		});
+		}
 		return homePageLinks;
-		// const html = await page.content();
-
-		// await page.close();
-
-		// return html;
 	} catch (error) {
 		console.log(error);
 	}

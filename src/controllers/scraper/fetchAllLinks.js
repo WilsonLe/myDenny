@@ -2,6 +2,7 @@ const fs = require('fs');
 const cleanLinks = require('./cleanLinks');
 const compareLinks = require('./compareLinks');
 const updateLinks = require('./updateLinks');
+const fetchHomePageLinks = require('./fetchHomePageLinks');
 const puppeteer = require('puppeteer');
 
 require('dotenv').config();
@@ -28,8 +29,8 @@ const fetchAllLinks = async () => {
 	});
 	let prevLinksList = [];
 	let currLinksList = [];
-	const homePageHTML = await getHomePageHTML(browser);
-	const homePageLinks = cleanLinks(extractLinks(homePageHTML));
+	const homePageLinks = await fetchHomePageLinks(browser);
+	console.log(homePageLinks);
 	currLinksList = [...homePageLinks];
 
 	while (compareArray(prevLinksList, currLinksList) == 'not identical') {
