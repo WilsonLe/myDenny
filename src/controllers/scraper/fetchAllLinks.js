@@ -39,17 +39,31 @@ const fetchAllLinks = async () => {
 		console.log('THERE CAN STILL BE MORE LINKS. LOOKING FOR MORE...');
 		let nextLinksList = [...currLinksList];
 		for (let i = 0; i < currLinksList.length; i++) {
+			let additions = 0;
+			let duplicates = 0;
 			currLink = currLinksList[i];
 			if (currLink.url.startsWith('http')) {
 				const fetchedLinks = await fetchLinksFromUrl(
 					page,
 					currLink.url
 				);
-				fetchedLinks.forEach((fetchedLink) =>
-					nextLinksList.push(fetchedLink)
+				const nextUrlList = nextLinksList.map(
+					(nextLink) => nextLink.url
 				);
+
+				fetchedLinks &&
+					fetchedLinks.forEach((fetchedLink) => {
+						if (nextUrlList.includes(fetchedLink.url)) {
+							duplicates++;
+						} else {
+							nextLinksList.push(fetchedLink);
+							additions++;
+						}
+					});
 			}
-			console.log('ADDED NEW LINKS IN ' + currLink.url);
+			console.log(
+				`added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
+			);
 		}
 
 		prevLinksList = [...currLinksList];

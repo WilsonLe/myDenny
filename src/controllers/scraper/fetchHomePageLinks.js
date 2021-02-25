@@ -20,7 +20,7 @@ const fetchHomePageLinks = async (page) => {
 
 		await page.waitForSelector('#mydenison-header');
 
-		console.log('Loged in');
+		console.log('Logged in');
 
 		const linksHandle = await page.$$('a');
 		for (let i = 0; i < linksHandle.length; i++) {
