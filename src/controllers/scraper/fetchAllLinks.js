@@ -18,7 +18,13 @@ const compareArray = (prevLinksList, currLinksList) => {
 	}
 	return 'identical';
 };
-// FIXME: DEV FETCH HOMEPAGE LINK ALGO THAT'S RELIABLE FOR OTHER PAGES
+const necessaryLink = (url) => {
+	if (url.includes('http'))
+		if (url.includes('denison'))
+			if (!url.includes('logout'))
+				if (!url.includes('google')) return true;
+	return false;
+};
 const fetchAllLinks = async () => {
 	const browser = await puppeteer.launch({
 		headless: process.env.NODE_ENV == 'development' ? false : true,
@@ -44,11 +50,7 @@ const fetchAllLinks = async () => {
 			let additions = 0;
 			let duplicates = 0;
 			currLink = currLinksList[i];
-			if (
-				currLink.url.startsWith('http') &&
-				currLink.url.includes('denison') &&
-				!currLink.url.includes('logout')
-			) {
+			if (necessaryLink(currLink.url)) {
 				const fetchedLinks = await fetchLinksFromUrl(
 					page,
 					currLink.url
