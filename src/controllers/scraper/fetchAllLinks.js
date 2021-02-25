@@ -46,7 +46,8 @@ const fetchAllLinks = async () => {
 			currLink = currLinksList[i];
 			if (
 				currLink.url.startsWith('http') &&
-				currLink.url.includes('denison')
+				currLink.url.includes('denison') &&
+				!currLink.url.includes('logout')
 			) {
 				const fetchedLinks = await fetchLinksFromUrl(
 					page,
