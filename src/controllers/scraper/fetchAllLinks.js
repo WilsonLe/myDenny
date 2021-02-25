@@ -44,7 +44,10 @@ const fetchAllLinks = async () => {
 			let additions = 0;
 			let duplicates = 0;
 			currLink = currLinksList[i];
-			if (currLink.url.startsWith('http')) {
+			if (
+				currLink.url.startsWith('http') &&
+				currLink.url.includes('denison')
+			) {
 				const fetchedLinks = await fetchLinksFromUrl(
 					page,
 					currLink.url
