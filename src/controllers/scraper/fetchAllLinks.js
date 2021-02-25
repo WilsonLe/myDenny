@@ -21,7 +21,7 @@ const compareArray = (prevLinksList, currLinksList) => {
 // FIXME: DEV FETCH HOMEPAGE LINK ALGO THAT'S RELIABLE FOR OTHER PAGES
 const fetchAllLinks = async () => {
 	const browser = await puppeteer.launch({
-		headless: false,
+		headless: process.env.NODE_ENV == 'development' ? false : true,
 		slowMo: 25,
 		args: [
 			'--disable-web-security',
