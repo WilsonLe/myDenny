@@ -3,9 +3,9 @@ const fetchHomePageLinks = async (page, url) => {
 	let pageLinks = [];
 
 	try {
-		await page.goto(url);
+		await page.goto(url, { waitUntil: 'load', timeout: 0 });
 
-		await (() => new Promise((res) => setTimeout(res, 3000)))();
+		// await (() => new Promise((res) => setTimeout(res, 3000)))();
 
 		const linksHandle = await page.$$('a');
 		for (let i = 0; i < linksHandle.length; i++) {
