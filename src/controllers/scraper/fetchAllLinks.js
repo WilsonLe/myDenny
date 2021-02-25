@@ -24,6 +24,8 @@ const fetchAllLinks = async () => {
 		headless: process.env.NODE_ENV == 'development' ? false : true,
 		slowMo: 25,
 		args: [
+			'--no-sandbox',
+			'--disable-setuid-sandbox',
 			'--disable-web-security',
 			'--disable-features=IsolateOrigins,site-per-process',
 		],
