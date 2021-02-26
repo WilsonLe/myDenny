@@ -1,5 +1,5 @@
-const necessaryLinkToGoAndFetch = (url, currLinksList) => {
-	currUrlList = currLinksList.map((currLink) => currLink.url);
+const necessaryLinkToGoAndFetch = (url, prevLinksList) => {
+	const prevUrlList = prevLinksList.map((prevLink) => prevLink.url);
 	let linkIsNecessary = false;
 	let message = '';
 	if (url.includes('http'))
@@ -11,11 +11,9 @@ const necessaryLinkToGoAndFetch = (url, currLinksList) => {
 							if (!url.includes('instagram'))
 								if (!url.includes('twitter'))
 									if (!url.includes('vems.denison.edu'))
-										if (!currUrlList.includes(url))
+										if (!prevUrlList.includes(url))
 											linkIsNecessary = true;
-										else
-											message =
-												'link already exist in currUrlList';
+										else message = 'have been there';
 									else message = 'includes vems.denison.edu';
 								else message = 'includes twitter';
 							else message = 'includes instagram';

@@ -5,21 +5,10 @@ const updateLinks = require('./updateLinks');
 const fetchHomePageLinks = require('./fetchHomePageLinks');
 const fetchLinksFromUrl = require('./fetchLinksFromUrl');
 const necessaryLinkToGoAndFetch = require('./necessaryLinkToGoAndFetch');
-
+const comparePrevCurrLinks = require('./comparePrevCurrLinks');
 const puppeteer = require('puppeteer');
 
 require('dotenv').config();
-
-const compareArray = (prevLinksList, currLinksList) => {
-	let currUrlList = currLinksList.map((currLink) => currLink.url);
-	let prevUrlList = prevLinksList.map((prevLink) => prevLink.url);
-	for (let i = 0; i < currUrlList.length; i++) {
-		if (!prevUrlList.includes(currUrlList[i])) {
-			return 'not identical';
-		}
-	}
-	return 'identical';
-};
 
 const fetchAllLinks = async () => {
 	const browser = await puppeteer.launch({
@@ -39,7 +28,9 @@ const fetchAllLinks = async () => {
 	const homePageLinks = await fetchHomePageLinks(page);
 	currLinksList = [...homePageLinks];
 
-	while (compareArray(prevLinksList, currLinksList) == 'not identical') {
+	while (
+		comparePrevCurrLinks(prevLinksList, currLinksList) == 'not identical'
+	) {
 		console.log('THERE CAN STILL BE MORE LINKS. LOOKING FOR MORE...');
 		let nextLinksList = [...currLinksList];
 		for (let i = 0; i < currLinksList.length; i++) {
@@ -49,7 +40,7 @@ const fetchAllLinks = async () => {
 
 			const { linkIsNecessary, message } = necessaryLinkToGoAndFetch(
 				currLink.url,
-				currLinksList
+				prevLinksList
 			);
 
 			if (linkIsNecessary) {
@@ -57,6 +48,7 @@ const fetchAllLinks = async () => {
 					page,
 					currLink.url
 				);
+
 				const nextUrlList = nextLinksList.map(
 					(nextLink) => nextLink.url
 				);
