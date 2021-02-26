@@ -1,8 +1,6 @@
 const fetchAllLinks = require('./fetchAllLinks');
 const compareLinks = require('./compareLinks');
 const updateLinks = require('./updateLinks');
-const fetchHomePageLinks = require('./fetchHomePageLinks');
-const puppeteer = require('puppeteer');
 
 require('dotenv').config();
 

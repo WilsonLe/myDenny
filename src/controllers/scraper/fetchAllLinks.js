@@ -1,7 +1,3 @@
-const fs = require('fs');
-const cleanLinks = require('./cleanLinks');
-const compareLinks = require('./compareLinks');
-const updateLinks = require('./updateLinks');
 const fetchHomePageLinks = require('./fetchHomePageLinks');
 const fetchLinksFromUrl = require('./fetchLinksFromUrl');
 const necessaryLinkToGoAndFetch = require('./necessaryLinkToGoAndFetch');

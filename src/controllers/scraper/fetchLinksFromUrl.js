@@ -5,7 +5,8 @@ const fetchHomePageLinks = async (page, url) => {
 	try {
 		await page.goto(url, { waitUntil: 'load', timeout: 0 });
 
-		// await (() => new Promise((res) => setTimeout(res, 3000)))();
+		const duoIframeHandle = await page.$('#duo_iframe');
+		if (duoIframeHandle) return [];
 
 		const linksHandle = await page.$$('a');
 		for (let i = 0; i < linksHandle.length; i++) {
