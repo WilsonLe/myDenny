@@ -28,12 +28,12 @@ const fetchAllLinks = async () => {
 	let currLinksList = [];
 	const homePageLinks = await fetchHomePageLinks(page);
 	currLinksList = [...homePageLinks];
-
 	while (
 		comparePrevCurrLinks(prevLinksList, currLinksList) == 'not identical'
 	) {
 		console.log('THERE CAN STILL BE MORE LINKS. LOOKING FOR MORE...');
 		let nextLinksList = [...currLinksList];
+		let progress = 0;
 		for (let i = 0; i < currLinksList.length; i++) {
 			let additions = 0;
 			let duplicates = 0;
@@ -64,13 +64,14 @@ const fetchAllLinks = async () => {
 						}
 					});
 				console.log(
-					`added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
+					`[${progress}/${currLinksList.length}] - added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
 				);
 			} else {
-				console.log(`Skipped ${currLink.url}`);
-				console.log(`Reason: ${message}`);
-				console.log('__________________');
+				console.log(
+					`[${progress}/${currLinksList.length}] - skipped ${currLink.url} - reason: ${message}`
+				);
 			}
+			progress++;
 		}
 
 		prevLinksList = [...currLinksList];
