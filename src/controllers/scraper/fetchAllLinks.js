@@ -2,6 +2,7 @@ const fetchHomePageLinks = require('./fetchHomePageLinks');
 const fetchLinksFromUrl = require('./fetchLinksFromUrl');
 const necessaryLinkToGoAndFetch = require('./necessaryLinkToGoAndFetch');
 const comparePrevCurrLinks = require('./comparePrevCurrLinks');
+const threadify = require('./threadify');
 const puppeteer = require('puppeteer');
 
 require('dotenv').config();
@@ -34,45 +35,49 @@ const fetchAllLinks = async () => {
 		console.log('THERE CAN STILL BE MORE LINKS. LOOKING FOR MORE...');
 		let nextLinksList = [...currLinksList];
 		let progress = 0;
-		for (let i = 0; i < currLinksList.length; i++) {
-			let additions = 0;
-			let duplicates = 0;
-			currLink = currLinksList[i];
+		const threads = threadify(currLinksList);
+		threads.forEach(async (thread) => {
+			const currLinksList = [...thread];
+			for (let i = 0; i < currLinksList.length; i++) {
+				let additions = 0;
+				let duplicates = 0;
+				currLink = currLinksList[i];
 
-			const { linkIsNecessary, message } = necessaryLinkToGoAndFetch(
-				currLink.url,
-				prevLinksList
-			);
-
-			if (linkIsNecessary) {
-				const fetchedLinks = await fetchLinksFromUrl(
-					page,
-					currLink.url
+				const { linkIsNecessary, message } = necessaryLinkToGoAndFetch(
+					currLink.url,
+					prevLinksList
 				);
 
-				const nextUrlList = nextLinksList.map(
-					(nextLink) => nextLink.url
-				);
+				if (linkIsNecessary) {
+					const fetchedLinks = await fetchLinksFromUrl(
+						page,
+						currLink.url
+					);
 
-				fetchedLinks &&
-					fetchedLinks.forEach((fetchedLink) => {
-						if (nextUrlList.includes(fetchedLink.url)) {
-							duplicates++;
-						} else {
-							nextLinksList.push(fetchedLink);
-							additions++;
-						}
-					});
-				console.log(
-					`[${progress}/${currLinksList.length}] - added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
-				);
-			} else {
-				console.log(
-					`[${progress}/${currLinksList.length}] - skipped ${currLink.url} - reason: ${message}`
-				);
+					const nextUrlList = nextLinksList.map(
+						(nextLink) => nextLink.url
+					);
+
+					fetchedLinks &&
+						fetchedLinks.forEach((fetchedLink) => {
+							if (nextUrlList.includes(fetchedLink.url)) {
+								duplicates++;
+							} else {
+								nextLinksList.push(fetchedLink);
+								additions++;
+							}
+						});
+					console.log(
+						`[${progress}/${currLinksList.length}] - added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
+					);
+				} else {
+					console.log(
+						`[${progress}/${currLinksList.length}] - skipped ${currLink.url} - reason: ${message}`
+					);
+				}
+				progress++;
 			}
-			progress++;
-		}
+		});
 
 		prevLinksList = [...currLinksList];
 		currLinksList = [...nextLinksList];
