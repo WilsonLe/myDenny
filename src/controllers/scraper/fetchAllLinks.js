@@ -34,7 +34,7 @@ const fetchAllLinks = async () => {
 		let nextLinksList = [...currLinksList];
 		let progress = 0;
 		for (let i = 0; i < currLinksList.length; i++) {
-			const time = new Date.now().toLocaleTimeString();
+			const time = new Date().toLocaleTimeString();
 			progress++;
 			let additions = 0;
 			let duplicates = 0;

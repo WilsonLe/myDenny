@@ -15,7 +15,12 @@ const fetchHomePageLinks = async (page, url) => {
 				(el) => el.textContent,
 				linkHandle
 			);
-			const url = await page.evaluate((el) => el.href, linkHandle);
+			let url = await page.evaluate((el) => el.href, linkHandle);
+
+			if (url.search('#') != -1)
+				url = url.substring(0, url.search('#') - 1);
+
+			if (url.endsWith('/')) url = url.substring(0, url.length - 1);
 			pageLinks.push({ text, url });
 		}
 		return pageLinks;
