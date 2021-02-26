@@ -18,11 +18,17 @@ const compareArray = (prevLinksList, currLinksList) => {
 	}
 	return 'identical';
 };
-const necessaryLink = (url) => {
+const necessaryLinkToGoAndFetch = (url, currLinksList) => {
+	currUrlList = currLinksList.map((currLink) => currLink.url);
 	if (url.includes('http'))
 		if (url.includes('denison'))
 			if (!url.includes('logout'))
-				if (!url.includes('google')) return true;
+				if (!url.includes('google'))
+					if (!currUrlList.includes('youtube'))
+						if (!currUrlList.includes('facebook'))
+							if (!currUrlList.includes('instagram'))
+								if (!currUrlList.includes('twitter'))
+									if (!currUrlList.includes(url)) return true;
 	return false;
 };
 const fetchAllLinks = async () => {
@@ -50,7 +56,7 @@ const fetchAllLinks = async () => {
 			let additions = 0;
 			let duplicates = 0;
 			currLink = currLinksList[i];
-			if (necessaryLink(currLink.url)) {
+			if (necessaryLinkToGoAndFetch(currLink.url, currLinksList)) {
 				const fetchedLinks = await fetchLinksFromUrl(
 					page,
 					currLink.url
@@ -68,10 +74,14 @@ const fetchAllLinks = async () => {
 							additions++;
 						}
 					});
+				console.log(
+					`added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
+				);
+			} else {
+				console.log(
+					`skipped ${currLink.url} as the url did not pass the filter`
+				);
 			}
-			console.log(
-				`added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
-			);
 		}
 
 		prevLinksList = [...currLinksList];
