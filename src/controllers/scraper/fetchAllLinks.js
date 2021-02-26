@@ -76,6 +76,7 @@ const fetchAllLinks = async () => {
 			} else {
 				console.log(`Skipped ${currLink.url}`);
 				console.log(`Reason: ${message}`);
+				console.log('__________________');
 			}
 		}
 
