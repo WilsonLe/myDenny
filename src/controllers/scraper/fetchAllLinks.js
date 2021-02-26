@@ -24,11 +24,13 @@ const necessaryLinkToGoAndFetch = (url, currLinksList) => {
 		if (url.includes('denison'))
 			if (!url.includes('logout'))
 				if (!url.includes('google'))
-					if (!currUrlList.includes('youtube'))
-						if (!currUrlList.includes('facebook'))
-							if (!currUrlList.includes('instagram'))
-								if (!currUrlList.includes('twitter'))
-									if (!currUrlList.includes(url)) return true;
+					if (!url.includes('youtube'))
+						if (!url.includes('facebook'))
+							if (!url.includes('instagram'))
+								if (!url.includes('twitter'))
+									if (url.includes('vems.denison.edu'))
+										if (!currUrlList.includes(url))
+											return true;
 	return false;
 };
 const fetchAllLinks = async () => {
