@@ -22,6 +22,11 @@ const fetchAllLinks = async () => {
 		],
 	});
 	const page = await browser.newPage();
+	page.on('dialog', async (dialog) => {
+		console.log('Got a dialog');
+		console.log(dialog.message());
+		await dialog.dismiss();
+	});
 
 	let prevLinksList = [];
 	let currLinksList = [];
