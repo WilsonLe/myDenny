@@ -15,15 +15,16 @@ const necessaryLinkToGoAndFetch = (url, currLinksList) => {
 											linkIsNecessary = true;
 										else
 											message =
-												'includes vems.denison.edu';
-									else message = 'includes twitter';
-								else message = 'includes instagram';
-							else message = 'includes facebook';
-						else message = 'includes youtube';
-					else message = 'includes google';
-				else message = 'includes logout';
-			else message = 'does not include denison';
-		else message = 'does not include http';
+												'link already exist in currUrlList';
+									else message = 'includes vems.denison.edu';
+								else message = 'includes twitter';
+							else message = 'includes instagram';
+						else message = 'includes facebook';
+					else message = 'includes youtube';
+				else message = 'includes google';
+			else message = 'includes logout';
+		else message = 'does not include denison';
+	else message = 'does not include http';
 	return { linkIsNecessary, message };
 };
 

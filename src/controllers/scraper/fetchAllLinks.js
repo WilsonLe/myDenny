@@ -74,7 +74,8 @@ const fetchAllLinks = async () => {
 					`added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
 				);
 			} else {
-				console.log(`skipped ${currLink.url}. Reason: ${message}`);
+				console.log(`Skipped ${currLink.url}`);
+				console.log(`Reason: ${message}`);
 			}
 		}
 
