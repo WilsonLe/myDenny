@@ -6,7 +6,13 @@ require('dotenv').config();
 
 const initScraper = async () => {
 	const allCurrLinks = await fetchAllLinks();
-	console.log('All links length: ' + allCurrLinks.length);
+
+	console.log(`Number of current links: ${allCurrLinks.length}`);
+	const { additions, removals } = compareLinks(allCurrLinks);
+
+	console.log(`Number of additions: ${additions}`);
+	console.log(`Number of removals: ${removals}`);
+	await updateLinks({ additions, removals });
 };
 
 module.exports = initScraper;

@@ -2,9 +2,7 @@ require('dotenv').config();
 
 const Link = require('../../models/Link');
 
-const updateLinks = async (links) => {
-	const additions = links.additions;
-	const removals = links.removals;
+const updateLinks = async ({ additions, removals }) => {
 	const removalsUrl = removals.map((removal) => removal.url);
 	try {
 		const res = await Link.insertMany(additions, { ordered: false });
