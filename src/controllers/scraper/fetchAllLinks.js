@@ -4,6 +4,8 @@ const compareLinks = require('./compareLinks');
 const updateLinks = require('./updateLinks');
 const fetchHomePageLinks = require('./fetchHomePageLinks');
 const fetchLinksFromUrl = require('./fetchLinksFromUrl');
+const necessaryLinkToGoAndFetch = require('./necessaryLinkToGoAndFetch');
+
 const puppeteer = require('puppeteer');
 
 require('dotenv').config();
@@ -18,21 +20,7 @@ const compareArray = (prevLinksList, currLinksList) => {
 	}
 	return 'identical';
 };
-const necessaryLinkToGoAndFetch = (url, currLinksList) => {
-	currUrlList = currLinksList.map((currLink) => currLink.url);
-	if (url.includes('http'))
-		if (url.includes('denison'))
-			if (!url.includes('logout'))
-				if (!url.includes('google'))
-					if (!url.includes('youtube'))
-						if (!url.includes('facebook'))
-							if (!url.includes('instagram'))
-								if (!url.includes('twitter'))
-									if (url.includes('vems.denison.edu'))
-										if (!currUrlList.includes(url))
-											return true;
-	return false;
-};
+
 const fetchAllLinks = async () => {
 	const browser = await puppeteer.launch({
 		headless: process.env.NODE_ENV == 'development' ? false : true,
@@ -58,7 +46,13 @@ const fetchAllLinks = async () => {
 			let additions = 0;
 			let duplicates = 0;
 			currLink = currLinksList[i];
-			if (necessaryLinkToGoAndFetch(currLink.url, currLinksList)) {
+
+			const { linkIsNecessary, message } = necessaryLinkToGoAndFetch(
+				currLink.url,
+				currLinksList
+			);
+
+			if (linkIsNecessary) {
 				const fetchedLinks = await fetchLinksFromUrl(
 					page,
 					currLink.url
@@ -80,9 +74,7 @@ const fetchAllLinks = async () => {
 					`added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
 				);
 			} else {
-				console.log(
-					`skipped ${currLink.url} as the url did not pass the filter`
-				);
+				console.log(`skipped ${currLink.url}. Reason: ${message}`);
 			}
 		}
 
