@@ -34,6 +34,7 @@ const fetchAllLinks = async () => {
 		let nextLinksList = [...currLinksList];
 		let progress = 0;
 		for (let i = 0; i < currLinksList.length; i++) {
+			const time = new Date.now().toLocaleTimeString();
 			progress++;
 			let additions = 0;
 			let duplicates = 0;
@@ -64,11 +65,11 @@ const fetchAllLinks = async () => {
 						}
 					});
 				console.log(
-					`[${progress}/${currLinksList.length}] - added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
+					`[${time}] - [${progress}/${currLinksList.length}] - added ${additions} links in ${currLink.url} (${duplicates} duplicates)`
 				);
 			} else {
 				console.log(
-					`[${progress}/${currLinksList.length}] - skipped ${currLink.url} - reason: ${message}`
+					`[${time}] - [${progress}/${currLinksList.length}] - skipped ${currLink.url} - reason: ${message}`
 				);
 			}
 		}
