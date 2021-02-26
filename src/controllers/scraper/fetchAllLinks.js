@@ -34,6 +34,7 @@ const fetchAllLinks = async () => {
 		let nextLinksList = [...currLinksList];
 		let progress = 0;
 		for (let i = 0; i < currLinksList.length; i++) {
+			progress++;
 			let additions = 0;
 			let duplicates = 0;
 			currLink = currLinksList[i];
@@ -70,7 +71,6 @@ const fetchAllLinks = async () => {
 					`[${progress}/${currLinksList.length}] - skipped ${currLink.url} - reason: ${message}`
 				);
 			}
-			progress++;
 		}
 
 		prevLinksList = [...currLinksList];
