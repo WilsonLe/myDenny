@@ -1,6 +1,6 @@
 const fetchHomePageLinks = require('./fetchHomePageLinks');
 const fetchLinksFromUrl = require('./fetchLinksFromUrl');
-const necessaryLinkToGoAndFetch = require('./necessaryLinkToGoAndFetch');
+const necessaryLinkToGoAndFetch = require('./necessaryUrlToGoAndFetch');
 const comparePrevCurrLinks = require('./comparePrevCurrLinks');
 const puppeteer = require('puppeteer');
 
@@ -16,13 +16,7 @@ const fetchAllLinks = async () => {
 			'--disable-features=IsolateOrigins,site-per-process',
 		],
 	});
-	const page = await browser.newPage();
-	page.on('dialog', async (dialog) => {
-		console.log('Got a dialog');
-		console.log(dialog.message());
-		await dialog.dismiss();
-	});
-
+	
 	let prevLinksList = [];
 	let currLinksList = [];
 	const homePageLinks = await fetchHomePageLinks(page);

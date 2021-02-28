@@ -1,5 +1,4 @@
-const necessaryLinkToGoAndFetch = (url, prevLinksList) => {
-	const prevUrlList = prevLinksList.map((prevLink) => prevLink.url);
+const necessaryLinkToGoAndFetch = (url, urlsHistory) => {
 	let linkIsNecessary = false;
 	let message = '';
 	if (url.includes('http'))
@@ -11,7 +10,7 @@ const necessaryLinkToGoAndFetch = (url, prevLinksList) => {
 							if (!url.includes('instagram'))
 								if (!url.includes('twitter'))
 									if (!url.includes('vems.denison.edu'))
-										if (!prevUrlList.includes(url))
+										if (!urlsHistory.includes(url))
 											linkIsNecessary = true;
 										else message = 'have been there';
 									else message = 'includes vems.denison.edu';
