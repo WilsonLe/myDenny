@@ -13,7 +13,7 @@ const initMongoose = () => {
 			console.log('Connected to mongoDB server');
 		})
 		.catch((err) => {
-			console.log(err);
+			console.log(err.name);
 		});
 };
 

@@ -12,6 +12,6 @@ const schemaOptions = {};
 // Create Schema
 const LinkSchema = new Schema(schemaFields, schemaOptions);
 
-const NewLink = mongoose.model('Links', LinkSchema);
+const NewLink = mongoose.model('NewLinks', LinkSchema);
 
 module.exports = NewLink;

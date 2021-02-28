@@ -1,7 +1,7 @@
 const updateLinkFromUrl = require('./updateLinkFromUrl');
 const necessaryUrlToGoAndFetch = require('./necessaryUrlToGoAndFetch');
 const compareUrl = require('./compareUrl');
-
+const initPuppeteer = require('./initPuppeteer');
 const NewLink = require('../../models/NewLink');
 
 require('dotenv').config();

@@ -12,7 +12,10 @@ const handleHomePage = async (page, url) => {
 	let additions = 0;
 	let duplicates = 0;
 	try {
-		await page.goto(process.env.BASE_URL);
+		await page.goto(process.env.BASE_URL, {
+			waitUntil: 'load',
+			timeout: 0,
+		});
 		await page.type('#username', process.env.NAME);
 		await page.type('#password', process.env.PASSWORD);
 		await page.click('button[type="submit"]');

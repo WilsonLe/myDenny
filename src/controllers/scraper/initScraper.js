@@ -1,6 +1,3 @@
-const fetchAllLinks = require('./fetchAllLinks');
-const compareLinks = require('./compareLinks');
-const updateLinks = require('./updateLinks');
 const fetchAndUpdateAllLinks = require('./fetchAndUpdateAllLink');
 
 require('dotenv').config();
