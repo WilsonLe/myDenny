@@ -3,11 +3,24 @@ const insertLink = require('./insertLink');
 require('dotenv').config();
 
 const updateLinkFromUrl = async (page, url) => {
-	if (url === process.env.BASE_URL) await handleHomePage(page, url);
-	else await handleOtherPage(page, url);
+	if (url === process.env.BASE_URL) {
+		try {
+			const { additions, duplicates } = await handleHomePage(page);
+			return { additions, duplicates };
+		} catch (error) {
+			console.log(error.name);
+		}
+	} else {
+		try {
+			const { additions, duplicates } = await handleOtherPage(page, url);
+			return { additions, duplicates };
+		} catch (error) {
+			console.log(error.name);
+		}
+	}
 };
 
-const handleHomePage = async (page, url) => {
+const handleHomePage = async (page) => {
 	let homePageLinks = [];
 	let additions = 0;
 	let duplicates = 0;
@@ -51,6 +64,7 @@ const handleHomePage = async (page, url) => {
 		}
 
 		for (let i = 0; i < homePageLinks.length; i++) {
+			const link = homePageLinks[i];
 			if (await isUnique(link)) {
 				await insertLink(link);
 				additions++;
@@ -58,12 +72,13 @@ const handleHomePage = async (page, url) => {
 		}
 		return { additions, duplicates };
 	} catch (error) {
-		console.log(error.name);
+		console.log(error);
 	}
 };
 const handleOtherPage = async (page, url) => {
 	let pageLinks = [];
-
+	let additions = 0;
+	let duplicates = 0;
 	try {
 		await page.goto(url, { waitUntil: 'load', timeout: 0 });
 
@@ -78,20 +93,24 @@ const handleOtherPage = async (page, url) => {
 				linkHandle
 			);
 			let url = await page.evaluate((el) => el.href, linkHandle);
+			if (url) {
+				if (url.search('#') != -1)
+					url = url.substring(0, url.search('#') - 1);
 
-			if (url.search('#') != -1)
-				url = url.substring(0, url.search('#') - 1);
-
-			if (url.endsWith('/')) url = url.substring(0, url.length - 1);
-			pageLinks.push({ text, url });
+				if (url.endsWith('/')) url = url.substring(0, url.length - 1);
+				pageLinks.push({ text, url });
+			} else continue;
 		}
 		for (let i = 0; i < pageLinks.length; i++) {
+			const link = pageLinks[i];
 			if (await isUnique(link)) {
 				await insertLink(link);
-			}
+				additions++;
+			} else duplicates++;
 		}
+		return { additions, duplicates };
 	} catch (error) {
-		console.log(error);
+		console.log(error.name);
 	}
 };
 module.exports = updateLinkFromUrl;

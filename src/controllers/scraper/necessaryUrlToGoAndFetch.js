@@ -1,5 +1,5 @@
 const necessaryLinkToGoAndFetch = (url, urlsHistory) => {
-	let linkIsNecessary = false;
+	let urlIsNecessary = false;
 	let message = '';
 	if (url.includes('http'))
 		if (url.includes('denison'))
@@ -11,7 +11,7 @@ const necessaryLinkToGoAndFetch = (url, urlsHistory) => {
 								if (!url.includes('twitter'))
 									if (!url.includes('vems.denison.edu'))
 										if (!urlsHistory.includes(url))
-											linkIsNecessary = true;
+											urlIsNecessary = true;
 										else message = 'have been there';
 									else message = 'includes vems.denison.edu';
 								else message = 'includes twitter';
@@ -22,7 +22,7 @@ const necessaryLinkToGoAndFetch = (url, urlsHistory) => {
 			else message = 'includes logout';
 		else message = 'does not include denison';
 	else message = 'does not include http';
-	return { linkIsNecessary, message };
+	return { urlIsNecessary, message };
 };
 
 module.exports = necessaryLinkToGoAndFetch;
