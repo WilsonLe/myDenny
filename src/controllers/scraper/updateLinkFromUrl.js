@@ -113,7 +113,13 @@ const handleOtherPage = async (page, url) => {
 		}
 		return { additions, duplicates };
 	} catch (error) {
-		console.log(error.name);
+		if (error.name === 'Error') {
+			const additions = '#Error';
+			const duplicates = '#Error';
+			return { additions, duplicates };
+		} else {
+			console.log(error);
+		}
 	}
 };
 module.exports = updateLinkFromUrl;

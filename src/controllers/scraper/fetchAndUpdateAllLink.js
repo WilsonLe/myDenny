@@ -40,7 +40,7 @@ const fetchAndUpdateAllLinks = async () => {
 						}ms.`
 					);
 				} catch (error) {
-					console.log(error.name);
+					console.log(error);
 				}
 			} else {
 				console.log(
@@ -52,9 +52,6 @@ const fetchAndUpdateAllLinks = async () => {
 		urlsToFetchAndUpdate = linksToFetchAndUpdate.map((link) => link.url);
 	}
 
-	await Link.remove({});
-	const newLinks = await NewLink.find();
-	await Link.insertMany(newLinks);
 	await NewLink.remove({});
 	console.log(`Successfully updated databases with ${newLinks.length} links`);
 };
