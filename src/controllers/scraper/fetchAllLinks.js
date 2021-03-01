@@ -1,7 +1,7 @@
 const fetchHomePageLinks = require('./fetchHomePageLinks');
 const fetchLinksFromUrl = require('./fetchLinksFromUrl');
 const necessaryLinkToGoAndFetch = require('./necessaryLinkToGoAndFetch');
-const comparePrevCurrLinks = require('./comparePrevCurrLinks');
+const comparePrevCurrLinks = require('./compareUrls');
 const puppeteer = require('puppeteer');
 
 require('dotenv').config();
