@@ -3,10 +3,10 @@
 // @access Public
 
 // Link model
-const Link = require('../models/Link');
+const OfficialLink = require('../models/OfficialLink');
 
 const sendLinks = async (req, res) => {
-	const links = await Link.find();
+	const links = await OfficialLink.find();
 	return res.json(links);
 };
 
