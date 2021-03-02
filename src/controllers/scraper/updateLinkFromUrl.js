@@ -21,10 +21,11 @@ const updateLinkFromUrl = async (page, url) => {
 };
 
 const handleHomePage = async (page) => {
-	let homePageLinks = [];
-	let additions = 0;
-	let duplicates = 0;
 	try {
+		let homePageLinks = [];
+		let additions = 0;
+		let duplicates = 0;
+
 		await page.goto(process.env.BASE_URL, {
 			waitUntil: 'load',
 			timeout: 0,
@@ -48,6 +49,7 @@ const handleHomePage = async (page) => {
 		console.log('Logged in');
 
 		const linksHandle = await page.$$('a');
+
 		for (let i = 0; i < linksHandle.length; i++) {
 			const linkHandle = linksHandle[i];
 			const text = await page.evaluate(
@@ -65,7 +67,8 @@ const handleHomePage = async (page) => {
 
 		for (let i = 0; i < homePageLinks.length; i++) {
 			const link = homePageLinks[i];
-			if (await isUnique(link)) {
+			const linkIsUnique = await isUnique(link);
+			if (linkIsUnique) {
 				await insertLink(link);
 				additions++;
 			} else duplicates++;
@@ -110,7 +113,13 @@ const handleOtherPage = async (page, url) => {
 		}
 		return { additions, duplicates };
 	} catch (error) {
-		console.log(error.name);
+		if (error.name === 'Error') {
+			const additions = '#Error';
+			const duplicates = '#Error';
+			return { additions, duplicates };
+		} else {
+			console.log(error);
+		}
 	}
 };
 module.exports = updateLinkFromUrl;

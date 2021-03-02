@@ -3,11 +3,12 @@ const necessaryUrlToGoAndFetch = require('./necessaryUrlToGoAndFetch');
 const compareUrl = require('./compareUrl');
 const initPuppeteer = require('./initPuppeteer');
 const NewLink = require('../../models/NewLink');
-const Link = require('../../models/Link');
 
 require('dotenv').config();
 
 const fetchAndUpdateAllLinks = async () => {
+	await NewLink.remove({});
+
 	let urlHistory = [process.env.BASE_URL];
 	const page = await initPuppeteer(); // page is tab
 	await updateLinkFromUrl(page, process.env.BASE_URL); // fetch and update dtb from BASE_URL
@@ -40,7 +41,7 @@ const fetchAndUpdateAllLinks = async () => {
 						}ms.`
 					);
 				} catch (error) {
-					console.log(error.name);
+					console.log(error);
 				}
 			} else {
 				console.log(
@@ -52,9 +53,6 @@ const fetchAndUpdateAllLinks = async () => {
 		urlsToFetchAndUpdate = linksToFetchAndUpdate.map((link) => link.url);
 	}
 
-	await Link.remove({});
-	const newLinks = await NewLink.find();
-	await Link.insertMany(newLinks);
 	await NewLink.remove({});
 	console.log(`Successfully updated databases with ${newLinks.length} links`);
 };
