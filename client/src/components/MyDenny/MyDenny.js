@@ -37,6 +37,7 @@ const MyDenny = () => {
 		{ text: 'asdf' },
 		{ text: 'asdf' },
 	];
+	const [isFocus, setIsFocus] = useState(false);
 	const [links, setLinks] = useState([]);
 	const [query, setQuery] = useState('');
 	const [linkShown, setLinkShown] = useState([]);
@@ -61,12 +62,23 @@ const MyDenny = () => {
 		} else if (query.length === 0) setLinkShown([]);
 	};
 
+	const handleClickOutside = (e) => {
+		const classNames = e.target.className;
+		if (classNames.includes('container')) setIsFocus(false);
+		else setIsFocus(true);
+	};
+
 	return (
-		<DennyContainer>
+		<DennyContainer
+			onClick={(e) => handleClickOutside(e)}
+			className={'container'}
+		>
 			<SearchBar
 				query={query}
 				setQuery={setQuery}
 				linkShown={linkShown}
+				isFocus={isFocus}
+				setIsFocus={setIsFocus}
 			/>
 		</DennyContainer>
 	);

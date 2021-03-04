@@ -2,9 +2,9 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 
-const Suggestions = ({ linkShown, setQuery, isFocus }) => {
+const Suggestions = ({ linkShown, setQuery }) => {
 	return (
-		<SuggestionsContainer isFocus={isFocus}>
+		<SuggestionsContainer>
 			{linkShown.map((link) => (
 				<SuggestionBox
 					onClick={(e) => {
@@ -21,7 +21,6 @@ const Suggestions = ({ linkShown, setQuery, isFocus }) => {
 };
 
 const SuggestionsContainer = styled.div`
-	display: ${(p) => (p.isFocus ? 'inline-block' : 'none')};
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -42,7 +41,14 @@ const SuggestionsContainer = styled.div`
 	}
 `;
 const SuggestionBox = styled.div`
+	border-top: 1px dashed black;
 	width: 100%;
 	padding: 0.5rem;
+	background-color: #ffffff;
+	transition: all 0.15s ease;
+	&:hover {
+		transition: all 0.15s ease;
+		background-color: #eeeeee;
+	}
 `;
 export default Suggestions;

@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 import Suggestions from './Suggestions';
 
-const SearchBar = ({ query, setQuery, linkShown }) => {
+const SearchBar = ({ query, setQuery, linkShown, isFocus, setIsFocus }) => {
 	const xRef = useRef();
 
-	const [isFocus, setIsFocus] = useState(false);
 	const [xWidth, setXWidth] = useState(0);
 
 	const handleXClick = () => {
@@ -16,7 +15,10 @@ const SearchBar = ({ query, setQuery, linkShown }) => {
 		setIsFocus(true);
 	};
 	const handleOutFocus = (e) => {
-		setIsFocus(false);
+		const tagName = e.target;
+		console.log(tagName);
+		if (tagName !== 'INPUT') setIsFocus(false);
+		else setIsFocus(true);
 	};
 
 	useEffect(() => setXWidth(xRef.current.clientHeight), [xRef]);
@@ -30,7 +32,6 @@ const SearchBar = ({ query, setQuery, linkShown }) => {
 					placeholder={'Enter your search here...'}
 					onChange={(e) => setQuery(e.target.value)}
 					onFocus={(e) => handleFocus(e)}
-					onBlur={(e) => handleOutFocus(e)}
 					xWidth={xWidth}
 				/>
 				<Button onClick={handleXClick} ref={xRef} xWidth={xWidth}>
@@ -38,11 +39,9 @@ const SearchBar = ({ query, setQuery, linkShown }) => {
 				</Button>
 			</div>
 
-			<Suggestions
-				linkShown={linkShown}
-				setQuery={setQuery}
-				isFocus={isFocus}
-			/>
+			{isFocus ? (
+				<Suggestions linkShown={linkShown} setQuery={setQuery} />
+			) : null}
 		</SearchBarContainer>
 	);
 };
