@@ -51,6 +51,9 @@ const SearchBarContainer = styled.div`
 	flex-direction: column;
 	height: 60%;
 	width: 50%;
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const Input = styled.input`

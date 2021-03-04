@@ -4,6 +4,8 @@ import SearchBar from '../SearchBar/SearchBar';
 
 import fetchLinks from '../../utils/fetchLinks';
 
+import Title from './Title';
+
 const MyDenny = () => {
 	const mockLinks = [
 		{ text: 'asdf' },
@@ -64,8 +66,10 @@ const MyDenny = () => {
 
 	const handleClickOutside = (e) => {
 		const classNames = e.target.className;
-		if (classNames.includes('container')) setIsFocus(false);
-		else setIsFocus(true);
+		if (typeof classNames === 'string') {
+			if (classNames.includes('container')) setIsFocus(false);
+			else setIsFocus(true);
+		} else setIsFocus(false);
 	};
 
 	return (
@@ -73,6 +77,7 @@ const MyDenny = () => {
 			onClick={(e) => handleClickOutside(e)}
 			className={'container'}
 		>
+			<Title />
 			<SearchBar
 				query={query}
 				setQuery={setQuery}
@@ -88,6 +93,7 @@ const DennyContainer = styled.div`
 	width: 80%;
 	height: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 `;
