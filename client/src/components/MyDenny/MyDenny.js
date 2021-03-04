@@ -8,36 +8,21 @@ import Title from './Title';
 
 const MyDenny = () => {
 	const mockLinks = [
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
-		{ text: 'asdf' },
+		{
+			text:
+				'If you see this, developer is being careless while testing. Sorry about this.',
+			url: 'example.com',
+		},
+		{
+			text:
+				'If you see this, developer is being careless while testing. Sorry about this.',
+			url: 'example.com',
+		},
+		{
+			text:
+				'If you see this, developer is being careless while testing. Sorry about this.',
+			url: 'example.com',
+		},
 	];
 	const [isFocus, setIsFocus] = useState(false);
 	const [links, setLinks] = useState([]);
