@@ -27,10 +27,18 @@ const GlobalStyle = createGlobalStyle`
 	}
 	body {
 		font-family: "Roboto", sans-serif;
-		overflow: scroll;
+		overflow: hidden;
 	}
 `;
 
-const AppContainer = styled.div``;
+const AppContainer = styled.div`
+	display: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: #c8032b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 export default App;

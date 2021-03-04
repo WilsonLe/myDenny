@@ -1,10 +1,42 @@
 import React, { useState, useEffect } from 'react';
-
+import styled from 'styled-components';
 import SearchBar from '../SearchBar/SearchBar';
 
 import fetchLinks from '../../utils/fetchLinks';
 
 const MyDenny = () => {
+	const mockLinks = [
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+		{ text: 'asdf' },
+	];
 	const [links, setLinks] = useState([]);
 	const [query, setQuery] = useState('');
 	const [linkShown, setLinkShown] = useState([]);
@@ -12,14 +44,12 @@ const MyDenny = () => {
 	useEffect(() => {
 		(async () => {
 			let links = await fetchLinks();
-			setLinks(links);
-			setLinkShown([...links]);
+			if (links) setLinks(links);
+			else setLinks(mockLinks);
 		})();
 	}, []);
 
-	useEffect(() => {
-		filterSuggestions();
-	}, [query]);
+	useEffect(() => filterSuggestions(), [query]);
 
 	const filterSuggestions = () => {
 		let linkTextRegex = new RegExp(query, 'i');
@@ -28,14 +58,25 @@ const MyDenny = () => {
 				linkTextRegex.test(link.text)
 			);
 			setLinkShown(newLinks);
-		} else if (query.length === 0) {
-			setLinkShown([...links]);
-		}
+		} else if (query.length === 0) setLinkShown([]);
 	};
 
 	return (
-		<SearchBar query={query} setQuery={setQuery} linkShown={linkShown} />
+		<DennyContainer>
+			<SearchBar
+				query={query}
+				setQuery={setQuery}
+				linkShown={linkShown}
+			/>
+		</DennyContainer>
 	);
 };
 
+const DennyContainer = styled.div`
+	width: 80%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 export default MyDenny;
