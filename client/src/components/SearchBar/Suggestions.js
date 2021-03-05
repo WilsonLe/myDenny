@@ -1,17 +1,24 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 import styled from 'styled-components';
 
 const Suggestions = ({ linkShown, setQuery }) => {
+	const handleClickLink = async (e, link) => {
+		setQuery(link.text);
+		window.open(link.url, '_blank');
+		try {
+			const res = await axios.post('/api/links/click', { url: link.url });
+			if (res.status === 200) return;
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<SuggestionsContainer>
 			{linkShown.map((link) => (
 				<SuggestionBox
-					onClick={(e) => {
-						setQuery(link.text);
-						window.open(link.url, '_blank');
-					}}
-					key={uuidv4()}
+					onClick={(e) => handleClickLink(e, link)}
+					key={link._id}
 				>
 					{link.text}
 				</SuggestionBox>

@@ -55,6 +55,8 @@ const MyDenny = () => {
 		} else setIsFocus(false);
 	};
 
+	useEffect(() => console.log(linkShown), [linkShown]);
+	
 	return (
 		<DennyContainer
 			onClick={(e) => handleClickOutside(e)}

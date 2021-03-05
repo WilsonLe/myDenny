@@ -10,7 +10,7 @@ router.get(
 	require('../../controllers/sendLinks')
 );
 
-// @route POST api/links
+// @route POST api/links/click
 // @desc post upate link by url and update its time
 // @access Public
 
