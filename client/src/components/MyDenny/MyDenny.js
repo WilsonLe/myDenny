@@ -11,17 +11,14 @@ const MyDenny = () => {
 		{
 			text:
 				'If you see this, developer is being careless while testing. Sorry about this.',
-			url: 'example.com',
+			url: 'https://my.dennison.edu/students',
+			click: 9,
 		},
 		{
 			text:
 				'If you see this, developer is being careless while testing. Sorry about this.',
-			url: 'example.com',
-		},
-		{
-			text:
-				'If you see this, developer is being careless while testing. Sorry about this.',
-			url: 'example.com',
+			url: 'https://my.dennison.edu/campus-resources',
+			click: 4,
 		},
 	];
 	const [isFocus, setIsFocus] = useState(false);
