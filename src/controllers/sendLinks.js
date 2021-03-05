@@ -6,7 +6,7 @@
 const OfficialLink = require('../models/OfficialLink');
 
 const sendLinks = async (req, res) => {
-	const links = await OfficialLink.find();
+	const links = await OfficialLink.find().select('-timeClick').select('-_id');
 	return res.json(links);
 };
 

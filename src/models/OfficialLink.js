@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 const schemaFields = {
 	url: { type: String, unique: true, required: true },
 	text: String,
+	timeClick: String,
+	click: Number,
 };
 
 const schemaOptions = {};

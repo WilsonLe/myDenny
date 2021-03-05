@@ -45,6 +45,7 @@ const MyDenny = () => {
 			let newLinks = [...links].filter((link) =>
 				linkTextRegex.test(link.text)
 			);
+			newLinks.sort((a, b) => b.click - a.click);
 			setLinkShown(newLinks);
 		} else if (query.length === 0) setLinkShown([]);
 	};
