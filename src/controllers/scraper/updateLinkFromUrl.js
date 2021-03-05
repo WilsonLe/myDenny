@@ -113,7 +113,7 @@ const handleOtherPage = async (page, url) => {
 		}
 		return { additions, duplicates };
 	} catch (error) {
-		if (error.name === 'Error') {
+		if (error.code === 'E11000') {
 			const additions = '#Error';
 			const duplicates = '#Error';
 			return { additions, duplicates };
