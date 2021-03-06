@@ -20,7 +20,8 @@ const Suggestions = ({ linkShown, setQuery }) => {
 					onClick={(e) => handleClickLink(e, link)}
 					key={link._id}
 				>
-					{link.text}
+					<Text>{link.text}</Text>
+					<Url>{link.url}</Url>
 				</SuggestionBox>
 			))}
 		</SuggestionsContainer>
@@ -57,5 +58,19 @@ const SuggestionBox = styled.div`
 		transition: all 0.15s ease;
 		background-color: #eeeeee;
 	}
+`;
+
+const Text = styled.p`
+	padding-left: 1rem;
+`;
+const Url = styled.p`
+	width: 100%;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	font-size: 0.8rem;
+	color: gray;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `;
 export default Suggestions;

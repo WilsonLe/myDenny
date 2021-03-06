@@ -10,8 +10,9 @@ const MyDenny = () => {
 	const mockLinks = [
 		{
 			text:
-				'If you see this, developer is being careless while testing. Sorry about this.',
-			url: 'https://my.dennison.edu/students',
+				'If you see this, developer is being careless while testing. Sorry about this.If you see this, developer is being careless while testing. Sorry about this.If you see this, developer is being careless while testing. Sorry about this.',
+			url:
+				'https://my.dennison.edu/studentshttps://my.dennison.edu/studentshttps://my.dennison.edu/studentshttps://my.dennison.edu/students',
 			click: 9,
 		},
 		{
@@ -56,7 +57,7 @@ const MyDenny = () => {
 	};
 
 	useEffect(() => console.log(linkShown), [linkShown]);
-	
+
 	return (
 		<DennyContainer
 			onClick={(e) => handleClickOutside(e)}

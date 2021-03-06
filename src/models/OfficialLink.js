@@ -7,6 +7,7 @@ const schemaFields = {
 	text: String,
 	timeClick: String,
 	click: Number,
+	path: String,
 };
 
 const schemaOptions = {};
