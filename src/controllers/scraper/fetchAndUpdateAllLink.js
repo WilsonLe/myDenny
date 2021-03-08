@@ -4,9 +4,6 @@ const compareUrl = require('./compareUrl');
 const initPuppeteer = require('./initPuppeteer');
 const NewLink = require('../../models/NewLink');
 const Link = require('../../models/Link');
-
-require('dotenv').config();
-
 const fetchAndUpdateAllLinks = async () => {
 	await NewLink.remove({});
 	await NewLink.insertMany(await Link.find());
