@@ -1,15 +1,26 @@
 const Visited = require('../../models/Visited');
 const visited = require('./visited');
+const initPuppeteer = require('./initPuppeteer');
 
 require('dotenv').config();
 
 const initScraper = async (req, res) => {
 	try {
-		const page = await initPuppeteer(); // page is tab
-		let toVisit = [{ url: process.env.BASE_URL, text: 'My Denison' }];
+		const { page, browser } = await initPuppeteer(); // page is tab
+		let toVisit = [
+			{
+				url: process.env.BASE_URL,
+				text: process.env.BASE_TEXT,
+				edges: '{}',
+			},
+		];
 
 		while (toVisit.length != 0) {
-			const { currUrl, text } = toVisit.pop();
+			const { url, text, edges } = toVisit.pop();
+			const currUrl = url;
+			if (await visited(currUrl)) continue;
+
+			console.log(`Visiting: ${currUrl}`);
 
 			await page.goto(currUrl, {
 				waitUntil: 'load',
@@ -25,29 +36,54 @@ const initScraper = async (req, res) => {
 				const linkHandle = linksHandle[i];
 				let { nextUrl, text } = await handleParser(linkHandle, page);
 
+				if (!nextUrl.startsWith(process.env.BASE_URL)) continue;
+				if (
+					nextUrl
+						.split('/')
+						[nextUrl.split('/').length - 1].includes('.')
+				)
+					continue;
+
+				console.log(`Found: ${nextUrl}`);
+
 				if (nextUrl) {
 					nextUrl = cleanUrl(nextUrl);
 
 					if (await visited(nextUrl)) {
+						console.log(
+							`${nextUrl} already visited. Add edges of ${currUrl} to ${nextUrl}`
+						);
 						const link = await Visited.findOne({ url: nextUrl });
 						const edges = JSON.parse(link.edges);
-						edges[nextUrl] = 1;
+						edges[currUrl] = 1;
 						link['edges'] = JSON.stringify(edges);
 						await Visited.findOneAndUpdate({ url: nextUrl }, link);
 					} else {
-						toVisit.push({ url: nextUrl, text });
+						console.log(
+							`${nextUrl} was not visited. Append to the toVisit list`
+						);
+						let edges = {};
+						edges[currUrl] = 1;
+						toVisit.push({
+							url: nextUrl,
+							text,
+							edges: JSON.stringify(edges),
+						});
 					}
 				} else continue;
 			}
-
+			console.log(`Visited ${currUrl}`);
 			await new Visited({
 				url: currUrl,
 				text,
-				edges: '{}',
+				edges,
 				click: 0,
 				timeClick: '{}',
 			}).save();
 		}
+		// const docs = await Visited.find();
+		// console.log(docs);
+		browser.close();
 	} catch (error) {
 		console.log(error);
 	}

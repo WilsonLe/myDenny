@@ -18,7 +18,7 @@ const initPuppeteer = async () => {
 		await dialog.dismiss();
 	});
 
-	return page;
+	return { page, browser };
 };
 
 module.exports = initPuppeteer;

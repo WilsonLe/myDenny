@@ -6,4 +6,4 @@ const visited = async (url) => {
 	if (docs.length == 0) return false;
 	else return true;
 };
-export default visited;
+module.exports = visited;
