@@ -6,7 +6,10 @@ require('dotenv').config();
 
 const initScraper = async (req, res) => {
 	try {
+		await Visited.remove();
+
 		const { page, browser } = await initPuppeteer(); // page is tab
+
 		let toVisit = [
 			{
 				url: process.env.BASE_URL,
@@ -19,6 +22,16 @@ const initScraper = async (req, res) => {
 			const { url, text, edges } = toVisit.pop();
 			const currUrl = url;
 			if (await visited(currUrl)) continue;
+			if (!valid(currUrl)) {
+				await new Visited({
+					url: currUrl,
+					text,
+					edges,
+					click: 0,
+					timeClick: '{}',
+				}).save();
+				continue;
+			}
 
 			console.log(`Visiting: ${currUrl}`);
 
@@ -36,41 +49,23 @@ const initScraper = async (req, res) => {
 				const linkHandle = linksHandle[i];
 				let { nextUrl, text } = await handleParser(linkHandle, page);
 
-				if (!nextUrl.startsWith(process.env.BASE_URL)) continue;
-				if (
-					nextUrl
-						.split('/')
-						[nextUrl.split('/').length - 1].includes('.')
-				)
-					continue;
+				nextUrl = cleanUrl(nextUrl);
 
-				console.log(`Found: ${nextUrl}`);
-
-				if (nextUrl) {
-					nextUrl = cleanUrl(nextUrl);
-
-					if (await visited(nextUrl)) {
-						console.log(
-							`${nextUrl} already visited. Add edges of ${currUrl} to ${nextUrl}`
-						);
-						const link = await Visited.findOne({ url: nextUrl });
-						const edges = JSON.parse(link.edges);
-						edges[currUrl] = 1;
-						link['edges'] = JSON.stringify(edges);
-						await Visited.findOneAndUpdate({ url: nextUrl }, link);
-					} else {
-						console.log(
-							`${nextUrl} was not visited. Append to the toVisit list`
-						);
-						let edges = {};
-						edges[currUrl] = 1;
-						toVisit.push({
-							url: nextUrl,
-							text,
-							edges: JSON.stringify(edges),
-						});
-					}
-				} else continue;
+				if (await visited(nextUrl)) {
+					const link = await Visited.findOne({ url: nextUrl });
+					const edges = JSON.parse(link.edges);
+					edges[currUrl] = 1;
+					link['edges'] = JSON.stringify(edges);
+					await Visited.findOneAndUpdate({ url: nextUrl }, link);
+				} else {
+					let edges = {};
+					edges[currUrl] = 1;
+					toVisit.push({
+						url: nextUrl,
+						text,
+						edges: JSON.stringify(edges),
+					});
+				}
 			}
 			console.log(`Visited ${currUrl}`);
 			await new Visited({
@@ -130,5 +125,19 @@ const cleanUrl = (nextUrl) => {
 
 	return nextUrl;
 };
+const valid = (currUrl) => {
+	if (!currUrl) return false;
 
+	if (
+		currUrl.split('/')[currUrl.split('/').length - 1].includes('.pdf') ||
+		currUrl.split('/')[currUrl.split('/').length - 1].includes('.csv') ||
+		currUrl.split('/')[currUrl.split('/').length - 1].includes('.xlxs') ||
+		currUrl.split('/')[currUrl.split('/').length - 1].includes('.docx')
+	)
+		return false;
+
+	if (!currUrl.startsWith(process.env.BASE_URL)) return false;
+
+	return true;
+};
 module.exports = initScraper;
