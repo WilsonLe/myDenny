@@ -6,7 +6,7 @@ const router = express.Router();
 // @access Private
 router.post(
 	'/',
-	require('../../middelwares/scrapeLimiter'),
+	// require('../../middelwares/scrapeLimiter'),
 	require('../../middelwares/checkIsAuth'),
 	require('../../controllers/scraper/initScraper')
 );
