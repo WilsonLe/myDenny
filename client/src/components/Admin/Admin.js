@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import Login from './Login';
 import AdminAuthorized from './AdminAuthorized';
 
+import Map from './Map';
+
 const Admin = () => {
 	const [token, setToken] = useState();
 
@@ -13,6 +15,7 @@ const Admin = () => {
 			) : (
 				<Login setToken={setToken} />
 			)}
+			{/* <Map /> */}
 		</React.Fragment>
 	);
 };

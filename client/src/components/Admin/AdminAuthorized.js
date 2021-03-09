@@ -3,10 +3,17 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
 import ScraperActivator from './ScraperActivator';
+import MapperActivator from './MapperActivator';
+import Map from './Map';
+
+import styled from 'styled-components';
 
 const AdminAuthorized = ({ token }) => {
 	const [tokenState, setTokenState] = useState('await');
 	const [data, setData] = useState([]);
+	const [mapData, setMapData] = useState({});
+	const [hasMapData, setHasMapData] = useState(false);
+
 	useEffect(() => {
 		(async () => {
 			if (token) {
@@ -29,11 +36,29 @@ const AdminAuthorized = ({ token }) => {
 	if (tokenState === 'await') return null;
 	else if (tokenState === 'invalid') return <Redirect to="/" />;
 	else if (tokenState === 'valid') {
-		console.log(data);
-		return <ScraperActivator token={token} />;
+		return (
+			<Container>
+				<ScraperActivator token={token} />
+				<br />
+				<MapperActivator
+					token={token}
+					setMapData={setMapData}
+					setHasMapData={setHasMapData}
+				/>
+				<br />
+				{hasMapData ? <Map mapData={mapData} /> : null}
+			</Container>
+		);
 	}
 	//FIXME insert admin tools
 	else return <Redirect to="/" />;
 };
+
+const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
 
 export default AdminAuthorized;

@@ -14,6 +14,7 @@ const initExpress = () => {
 	app.use('/api/links', require('../routes/api/links'));
 	app.use('/api/auth', require('../routes/api/auth'));
 	app.use('/api/scrape', require('../routes/api/scrape'));
+	app.use('/api/map', require('../routes/api/map'));
 	if (process.env.NODE_ENV === 'development')
 		app.use('/api/reg', require('../routes/api/reg'));
 

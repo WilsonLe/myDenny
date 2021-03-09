@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ScraperActivator = ({ token }) => {
 	const [scrapeState, setScrapeState] = useState(0);
 	const activateScraper = async (e) => {
-		console.log(token);
+		setScrapeState(1);
 		try {
 			const res = await axios.post(
 				'/api/scrape',
@@ -14,7 +14,7 @@ const ScraperActivator = ({ token }) => {
 					headers: { authorization: token },
 				}
 			);
-			if (res.status === 200) setScrapeState(1);
+			if (res.status === 200) setScrapeState(0);
 		} catch (e) {
 			alert(e.response.data.msg);
 		}

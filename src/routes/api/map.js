@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-// @route POST api/scrape
-// @desc Activate scraper
+// @route POST api/map
+// @desc Activate mapper
 // @access Private
 router.post(
 	'/',
-	require('../../middelwares/scrapeLimiter'),
 	require('../../middelwares/checkIsAuth'),
-	require('../../controllers/scraper/initScraper')
+	require('../../controllers/sendMap')
 );
 
 module.exports = router;
