@@ -65,7 +65,6 @@ const LoginContainer = styled.div`
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #eeeeee;
 `;
 
 const FormContainer = styled.div`
@@ -78,14 +77,14 @@ const FormContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background-color: #c6c6c6;
 	width: 30%;
 	height: 30%;
-	background-color: #9e9e9e;
 	@media screen and (max-width: 768px) {
 		width: 90%;
 		height: 50%;
 		margin-left: -45%;
-		margin-top: -25%;
+		margin-top: -45%;
 	}
 `;
 

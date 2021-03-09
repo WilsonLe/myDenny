@@ -24,5 +24,8 @@ const ScraperActivator = ({ token }) => {
 	else if (scrapeState === 1)
 		return <Button disabled>Scraper activated...</Button>;
 };
-const Button = styled.button``;
+const Button = styled.button`
+	font-size: 1.1rem;
+	padding: 0.5rem;
+`;
 export default ScraperActivator;
