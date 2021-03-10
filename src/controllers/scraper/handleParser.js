@@ -1,3 +1,4 @@
+const logger = require('../../utils/logger');
 const handleParser = async (linkHandle, page) => {
 	// extract text from link handle
 	const text = await page.evaluate((el) => el.textContent, linkHandle);

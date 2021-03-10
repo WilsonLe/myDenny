@@ -1,3 +1,5 @@
+const logger = require('../../utils/logger');
+
 const login = async (page) => {
 	await page.type('#username', process.env.NAME);
 	await page.type('#password', process.env.PASSWORD);

@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const logger = require('../../utils/logger');
+
 require('dotenv').config();
 
 const initPuppeteer = async () => {
@@ -13,8 +15,7 @@ const initPuppeteer = async () => {
 	});
 	const page = await browser.newPage();
 	page.on('dialog', async (dialog) => {
-		console.log('Got a dialog');
-		console.log(dialog.message());
+		logger.info(`Got a dialog: ${dialog.message()}`);
 		await dialog.dismiss();
 	});
 
