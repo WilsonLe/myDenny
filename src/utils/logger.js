@@ -2,9 +2,8 @@ const winston = require('winston');
 require('dotenv').config();
 
 const logger = winston.createLogger({
-	level: 'info',
+	levels: winston.config.npm.levels,
 	format: winston.format.json(),
-	defaultMeta: { service: 'user-service' },
 	transports: [
 		//
 		// - Write all logs with level `error` and below to `error.log`

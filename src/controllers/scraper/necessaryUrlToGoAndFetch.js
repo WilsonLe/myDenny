@@ -1,6 +1,8 @@
+const logger = require('../../utils/logger');
+
 const necessaryLinkToGoAndFetch = (currUrl) => {
 	if (!currUrl.includes('http')) {
-		logger.info(`${currUrl} includes http.`);
+		logger.info(`${currUrl} does not includes http.`);
 		return false;
 	}
 

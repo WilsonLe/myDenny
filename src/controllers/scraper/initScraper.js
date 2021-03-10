@@ -1,8 +1,13 @@
 const Visited = require('../../models/Visited');
 const logger = require('../../utils/logger');
+
 const visited = require('./visited');
 const necessaryUrlToGoAndFetch = require('./necessaryUrlToGoAndFetch');
 const initPuppeteer = require('./initPuppeteer');
+const checkLogin = require('./checkLogin');
+const login = require('./login');
+const handleParser = require('./handleParser');
+const cleanUrl = require('./cleanUrl');
 
 require('dotenv').config();
 
@@ -107,45 +112,4 @@ const initScraper = async (req, res) => {
 	}
 };
 
-const checkLogin = async (page) => {
-	const usernameInput = await page.$('#username');
-	const passwordInput = await page.$('#password');
-	if (usernameInput && passwordInput) return true;
-	else return false;
-};
-
-const login = async (page) => {
-	await page.type('#username', process.env.NAME);
-	await page.type('#password', process.env.PASSWORD);
-	await page.click('button[type="submit"]');
-
-	await (() => new Promise((res) => setTimeout(res, 3000)))();
-
-	const frameHandle = await page.$('#duo_iframe');
-	const frame = await frameHandle.contentFrame();
-	await frame.click(
-		'#auth_methods > fieldset > div.row-label.push-label > button'
-	);
-	await page.waitForSelector('#mydenison-header');
-	logger.info('Logged in');
-};
-
-const handleParser = async (linkHandle, page) => {
-	// extract text from link handle
-	const text = await page.evaluate((el) => el.textContent, linkHandle);
-
-	// extract url from link handle
-	const nextUrl = await page.evaluate((el) => el.href, linkHandle);
-
-	return { nextUrl, text };
-};
-const cleanUrl = (nextUrl) => {
-	if (nextUrl.search('#') != -1)
-		nextUrl = nextUrl.substring(0, nextUrl.search('#') - 1);
-
-	if (nextUrl.endsWith('/'))
-		nextUrl = nextUrl.substring(0, nextUrl.length - 1);
-
-	return nextUrl;
-};
 module.exports = initScraper;
