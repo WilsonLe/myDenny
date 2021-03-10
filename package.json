@@ -30,9 +30,10 @@
 		"express": "^4.17.1",
 		"express-rate-limit": "^5.2.6",
 		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^5.11.17",
+		"mongoose": "^5.11.15",
 		"node-html-parser": "^2.1.0",
 		"puppeteer": "^8.0.0",
-		"uuid": "^8.3.2"
+		"uuid": "^8.3.2",
+		"winston": "^3.3.3"
 	}
 }

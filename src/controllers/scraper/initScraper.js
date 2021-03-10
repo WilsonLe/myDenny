@@ -1,15 +1,19 @@
 const Visited = require('../../models/Visited');
+const logger = require('../../utils/logger');
 const visited = require('./visited');
 const initPuppeteer = require('./initPuppeteer');
 
 require('dotenv').config();
 
 const initScraper = async (req, res) => {
+	res.status(200).end();
 	try {
+		// remove collection for testing
 		await Visited.remove();
 
-		const { page, browser } = await initPuppeteer(); // page is tab
+		const { page, browser } = await initPuppeteer();
 
+		// init dfs algo
 		let toVisit = [
 			{
 				url: process.env.BASE_URL,
@@ -18,11 +22,15 @@ const initScraper = async (req, res) => {
 			},
 		];
 
+		// while there are still urls to visit, do:
 		while (toVisit.length != 0) {
-			const { url, text, edges } = toVisit.pop();
-			const currUrl = url;
+			const { url, text, edges } = toVisit.pop(); // get last element
+			const currUrl = url; // create currUrl as alias for url extracted from last element
+			logger.info(`Visiting ${currUrl}`);
 			if (await visited(currUrl)) continue;
+			if (!currUrl) continue;
 			if (!valid(currUrl)) {
+				// if url is not valid for searching more links from, do not visit, just push to the visited.
 				await new Visited({
 					url: currUrl,
 					text,
@@ -33,14 +41,13 @@ const initScraper = async (req, res) => {
 				continue;
 			}
 
-			console.log(`Visiting: ${currUrl}`);
+			// else, if url is valid to visit and search links from, do the following:
 
 			await page.goto(currUrl, {
 				waitUntil: 'load',
 				timeout: 0,
 			});
-
-			if (await checkDuo(page)) await login(page);
+			if (await checkLogin(page)) await login(page);
 
 			const linksHandle = await page.$$('a');
 
@@ -67,7 +74,7 @@ const initScraper = async (req, res) => {
 					});
 				}
 			}
-			console.log(`Visited ${currUrl}`);
+
 			await new Visited({
 				url: currUrl,
 				text,
@@ -76,12 +83,18 @@ const initScraper = async (req, res) => {
 				timeClick: '{}',
 			}).save();
 		}
-		// const docs = await Visited.find();
-		// console.log(docs);
-		browser.close();
+		await page.close();
+		await browser.close();
 	} catch (error) {
-		console.log(error);
+		logger.error(error);
 	}
+};
+
+const checkLogin = async (page) => {
+	const usernameInput = await page.$('#username');
+	const passwordInput = await page.$('#password');
+	if (usernameInput && passwordInput) return true;
+	else return false;
 };
 
 const login = async (page) => {
@@ -89,24 +102,17 @@ const login = async (page) => {
 	await page.type('#password', process.env.PASSWORD);
 	await page.click('button[type="submit"]');
 
-	await (() => new Promise((res) => setTimeout(res, 5000)))();
+	await (() => new Promise((res) => setTimeout(res, 3000)))();
 
 	const frameHandle = await page.$('#duo_iframe');
-
 	const frame = await frameHandle.contentFrame();
-
 	await frame.click(
 		'#auth_methods > fieldset > div.row-label.push-label > button'
 	);
-
 	await page.waitForSelector('#mydenison-header');
+	logger.info('Logged in');
+};
 
-	console.log('Logged in');
-};
-const checkDuo = async (page) => {
-	const duoIframeHandle = await page.$('#duo_iframe');
-	if (duoIframeHandle) return;
-};
 const handleParser = async (linkHandle, page) => {
 	// extract text from link handle
 	const text = await page.evaluate((el) => el.textContent, linkHandle);
@@ -126,8 +132,6 @@ const cleanUrl = (nextUrl) => {
 	return nextUrl;
 };
 const valid = (currUrl) => {
-	if (!currUrl) return false;
-
 	if (
 		currUrl.split('/')[currUrl.split('/').length - 1].includes('.pdf') ||
 		currUrl.split('/')[currUrl.split('/').length - 1].includes('.csv') ||

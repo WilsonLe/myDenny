@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const logger = require('./logger');
+
 require('dotenv').config();
 // init mongoose
 const initMongoose = () => {
@@ -10,7 +12,7 @@ const initMongoose = () => {
 			useFindAndModify: false,
 		})
 		.then((result) => {
-			console.log('Connected to mongoDB server');
+			logger.info('Connected to mongoDB server');
 		})
 		.catch((err) => {
 			console.log(err.name);

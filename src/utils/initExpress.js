@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const toHTTPS = require('../controllers/toHTTPS.js').redirectToHTTPS;
+const logger = require('./logger');
 require('dotenv').config();
 
 const initExpress = () => {
@@ -28,9 +29,7 @@ const initExpress = () => {
 
 	const port = process.env.PORT || 5000;
 
-	app.listen(port, () => {
-		console.log(`Server started on port ${port}`);
-	});
+	app.listen(port, () => logger.info(`Server started on port ${port}`));
 };
 
 module.exports = initExpress;
