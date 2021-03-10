@@ -1,6 +1,7 @@
 const Visited = require('../../models/Visited');
 const logger = require('../../utils/logger');
 const visited = require('./visited');
+const necessaryUrlToGoAndFetch = require('./necessaryUrlToGoAndFetch');
 const initPuppeteer = require('./initPuppeteer');
 
 require('dotenv').config();
@@ -26,10 +27,17 @@ const initScraper = async (req, res) => {
 		while (toVisit.length != 0) {
 			const { url, text, edges } = toVisit.pop(); // get last element
 			const currUrl = url; // create currUrl as alias for url extracted from last element
-			logger.info(`Visiting ${currUrl}`);
-			if (await visited(currUrl)) continue;
-			if (!currUrl) continue;
-			if (!valid(currUrl)) {
+
+			if (await visited(currUrl)) {
+				logger.info(`${currUrl} already visited.`);
+				continue;
+			}
+			if (!currUrl) {
+				logger.info(`${currUrl} does not exist.`);
+				continue;
+			}
+
+			if (!necessaryUrlToGoAndFetch(currUrl)) {
 				// if url is not valid for searching more links from, do not visit, just push to the visited.
 				await new Visited({
 					url: currUrl,
@@ -50,8 +58,9 @@ const initScraper = async (req, res) => {
 			if (await checkLogin(page)) await login(page);
 
 			const linksHandle = await page.$$('a');
-
+			const noLinks = linksHandle.length;
 			// sequentially loop through each link handles
+
 			for (let i = 0; i < linksHandle.length; i++) {
 				const linkHandle = linksHandle[i];
 				let { nextUrl, text } = await handleParser(linkHandle, page);
@@ -64,6 +73,10 @@ const initScraper = async (req, res) => {
 					edges[currUrl] = 1;
 					link['edges'] = JSON.stringify(edges);
 					await Visited.findOneAndUpdate({ url: nextUrl }, link);
+
+					logger.info(
+						`${currUrl} - [${i}/${noLinks}] - ${nextUrl} visited. Adding to ${nextUrl}'s edges`
+					);
 				} else {
 					let edges = {};
 					edges[currUrl] = 1;
@@ -72,6 +85,10 @@ const initScraper = async (req, res) => {
 						text,
 						edges: JSON.stringify(edges),
 					});
+
+					logger.info(
+						`${currUrl} - [${i}/${noLinks}] - Added ${nextUrl}.`
+					);
 				}
 			}
 
@@ -130,18 +147,5 @@ const cleanUrl = (nextUrl) => {
 		nextUrl = nextUrl.substring(0, nextUrl.length - 1);
 
 	return nextUrl;
-};
-const valid = (currUrl) => {
-	if (
-		currUrl.split('/')[currUrl.split('/').length - 1].includes('.pdf') ||
-		currUrl.split('/')[currUrl.split('/').length - 1].includes('.csv') ||
-		currUrl.split('/')[currUrl.split('/').length - 1].includes('.xlxs') ||
-		currUrl.split('/')[currUrl.split('/').length - 1].includes('.docx')
-	)
-		return false;
-
-	if (!currUrl.startsWith(process.env.BASE_URL)) return false;
-
-	return true;
 };
 module.exports = initScraper;

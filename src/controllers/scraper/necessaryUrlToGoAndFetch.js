@@ -1,28 +1,60 @@
-const necessaryLinkToGoAndFetch = (url, urlsHistory) => {
-	let urlIsNecessary = false;
-	let message = '';
-	if (url.includes('http'))
-		if (url.includes('denison'))
-			if (!url.includes('logout'))
-				if (!url.includes('google'))
-					if (!url.includes('youtube'))
-						if (!url.includes('facebook'))
-							if (!url.includes('instagram'))
-								if (!url.includes('twitter'))
-									if (!url.includes('vems.denison.edu'))
-										if (!urlsHistory.includes(url))
-											urlIsNecessary = true;
-										else message = 'have been there';
-									else message = 'includes vems.denison.edu';
-								else message = 'includes twitter';
-							else message = 'includes instagram';
-						else message = 'includes facebook';
-					else message = 'includes youtube';
-				else message = 'includes google';
-			else message = 'includes logout';
-		else message = 'does not include denison';
-	else message = 'does not include http';
-	return { urlIsNecessary, message };
+const necessaryLinkToGoAndFetch = (currUrl) => {
+	if (!currUrl.includes('http')) {
+		logger.info(`${currUrl} includes http.`);
+		return false;
+	}
+
+	const lastDir = currUrl.split('/')[currUrl.split('/').length - 1];
+	if (lastDir.includes('.pdf')) {
+		logger.info(`${currUrl} includes pdf extension.`);
+		return false;
+	}
+	if (lastDir.includes('.csv')) {
+		logger.info(`${currUrl} includes csv extension.`);
+		return false;
+	}
+	if (lastDir.includes('.xlxs')) {
+		logger.info(`${currUrl} includes xlxs extension.`);
+		return false;
+	}
+	if (lastDir.includes('.docx')) {
+		logger.info(`${currUrl} includes docx extension.`);
+		return false;
+	}
+	if (!currUrl.includes('denison')) {
+		logger.info(`${currUrl} does not include denison.`);
+		return false;
+	}
+	if (currUrl.includes('logout')) {
+		logger.info(`${currUrl} includes logout.`);
+		return false;
+	}
+	if (currUrl.includes('google')) {
+		logger.info(`${currUrl} includes google.`);
+		return false;
+	}
+	if (currUrl.includes('youtube')) {
+		logger.info(`${currUrl} includes youtube.`);
+		return false;
+	}
+	if (currUrl.includes('facebook')) {
+		logger.info(`${currUrl} includes facebook.`);
+		return false;
+	}
+	if (currUrl.includes('instagram')) {
+		logger.info(`${currUrl} includes instagram.`);
+		return false;
+	}
+	if (currUrl.includes('twitter')) {
+		logger.info(`${currUrl} includes twitter.`);
+		return false;
+	}
+	if (currUrl.includes('vems.denison.edu')) {
+		logger.info(`${currUrl} includes vems.denison.edu.`);
+		return false;
+	}
+
+	return true;
 };
 
 module.exports = necessaryLinkToGoAndFetch;
