@@ -17,7 +17,7 @@ const initScraper = async (req, res) => {
 	res.status(200).end();
 	try {
 		// remove collection for testing
-		// await Visited.remove();
+		await Visited.remove();
 
 		// init dfs algo
 		let toVisit = [
@@ -88,7 +88,7 @@ const initScraper = async (req, res) => {
 						await Visited.findOneAndUpdate({ url: nextUrl }, link);
 
 						logger.info(
-							`${toVisitLength} left - ${currUrl} - [${i}/${noLinks}] - visited. Adding edges`
+							`${toVisitLength} left - ${currUrl} - [${i}/${noLinks}] - Visited`
 						);
 					} else {
 						let edges = {};
@@ -100,7 +100,7 @@ const initScraper = async (req, res) => {
 						});
 
 						logger.info(
-							`${toVisitLength} left - ${currUrl} - [${i}/${noLinks}] - Added.`
+							`${toVisitLength} left - ${currUrl} - [${i}/${noLinks}] - Added`
 						);
 					}
 				}
