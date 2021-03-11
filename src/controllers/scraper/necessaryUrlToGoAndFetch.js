@@ -89,7 +89,24 @@ const necessaryLinkToGoAndFetch = (currUrl) => {
 		logger.info(`${currUrl} includes vems.denison.edu`);
 		return false;
 	}
+	if (currUrl.includes('@')) {
+		logger.info(`${currUrl} includes @`);
+		return false;
+	}
 	if (!currUrl.startsWith(process.env.BASE_URL)) {
+		logger.info(`${currUrl} does not start with ${process.env.BASE_URL}`);
+		return false;
+	}
+	if (
+		!currUrl.startsWith(process.env.BASE_URL) &&
+		!currUrl.startsWith('https://banner.denison.edu') &&
+		!currUrl.startsWith('https://myaid.denison.edu') &&
+		!currUrl.startsWith('https://mywellness.denison.edu') &&
+		!currUrl.startsWith('https://my.iss.denison.edu') &&
+		!currUrl.startsWith(
+			'https://denison.datacenter.adirondacksolutions.com'
+		)
+	) {
 		logger.info(`${currUrl} does not start with ${process.env.BASE_URL}`);
 		return false;
 	}

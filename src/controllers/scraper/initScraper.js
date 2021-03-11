@@ -17,7 +17,7 @@ const initScraper = async (req, res) => {
 	res.status(200).end();
 	try {
 		// remove collection for testing
-		await Visited.remove();
+		// await Visited.remove();
 
 		// init dfs algo
 		let toVisit = [
@@ -30,6 +30,7 @@ const initScraper = async (req, res) => {
 
 		// while there are still urls to visit, do:
 		while (toVisit.length != 0) {
+			let toVisitLength = toVisit.length;
 			try {
 				const { url, text, edges } = toVisit.pop(); // get last element
 				const currUrl = url; // create currUrl as alias for url extracted from last element
@@ -78,7 +79,6 @@ const initScraper = async (req, res) => {
 
 					// FIXME
 					nextUrl = cleanUrl(nextUrl);
-					logger.info(`${nextUrl}`);
 
 					if (await visited(nextUrl)) {
 						const link = await Visited.findOne({ url: nextUrl });
@@ -87,9 +87,9 @@ const initScraper = async (req, res) => {
 						link['edges'] = JSON.stringify(edges);
 						await Visited.findOneAndUpdate({ url: nextUrl }, link);
 
-						// logger.info(
-						// 	`${currUrl} - [${i}/${noLinks}] - ${nextUrl} visited. Adding edges`
-						// );
+						logger.info(
+							`${toVisitLength} left - ${currUrl} - [${i}/${noLinks}] - visited. Adding edges`
+						);
 					} else {
 						let edges = {};
 						edges[currUrl] = 1;
@@ -99,9 +99,9 @@ const initScraper = async (req, res) => {
 							edges: JSON.stringify(edges),
 						});
 
-						// logger.info(
-						// 	`${currUrl} - [${i}/${noLinks}] - Added ${nextUrl}`
-						// );
+						logger.info(
+							`${toVisitLength} left - ${currUrl} - [${i}/${noLinks}] - Added.`
+						);
 					}
 				}
 
