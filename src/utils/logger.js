@@ -1,4 +1,4 @@
-const winston = require('winston');
+require('winston-syslog');
 require('dotenv').config();
 
 const logger = winston.createLogger({
