@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-const Mapper = ({ token, setMapData, setHasMapData }) => {
+const Mapper = ({ token, setHasMapData, setMapData }) => {
 	const [mapState, setMapState] = useState(0);
 	const activateMapper = async (e) => {
 		setMapState(1);

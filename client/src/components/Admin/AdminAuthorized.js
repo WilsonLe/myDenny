@@ -42,8 +42,8 @@ const AdminAuthorized = ({ token }) => {
 				<br />
 				<MapperActivator
 					token={token}
-					setMapData={setMapData}
 					setHasMapData={setHasMapData}
+					setMapData={setMapData}
 				/>
 				<br />
 				{hasMapData ? <Map mapData={mapData} /> : null}
