@@ -67,10 +67,9 @@ const initScraper = async (req, res) => {
 				const linksHandle = await page.$$('a');
 				const noLinks = linksHandle.length;
 				// sequentially loop through each link handles
-
+				let additions = 0;
+				let visiteds = 0;
 				for (let i = 0; i < linksHandle.length; i++) {
-					let additions = 0;
-					let visiteds = 0;
 					const linkHandle = linksHandle[i];
 					let { nextUrl, text } = await handleParser(
 						linkHandle,
@@ -88,7 +87,7 @@ const initScraper = async (req, res) => {
 						edges[currUrl] = 1;
 						link['edges'] = JSON.stringify(edges);
 						await Visited.findOneAndUpdate({ url: nextUrl }, link);
-						additions++;
+						visiteds++;
 					} else {
 						let edges = {};
 						edges[currUrl] = 1;
@@ -97,11 +96,11 @@ const initScraper = async (req, res) => {
 							text,
 							edges: JSON.stringify(edges),
 						});
-						visiteds++;
+						additions++;
 					}
 				}
 				logger.info(
-					`${toVisitLength} left - ${currUrl} - ${addition} additions - ${visiteds} visiteds`
+					`${toVisitLength} left - ${currUrl} - ${additions} additions - ${visiteds} visiteds`
 				);
 				await new Visited({
 					url: currUrl,
