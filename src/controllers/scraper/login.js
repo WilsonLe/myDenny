@@ -9,6 +9,7 @@ const login = async (page) => {
 
 	const frameHandle = await page.$('#duo_iframe');
 	const frame = await frameHandle.contentFrame();
+	await frame.click('#remember_me_label_text');
 	await frame.click(
 		'#auth_methods > fieldset > div.row-label.push-label > button'
 	);
