@@ -1,29 +1,15 @@
-require('winston-syslog');
+const winston = require('winston');
+
 require('dotenv').config();
 
 const logger = winston.createLogger({
-	levels: winston.config.npm.levels,
-	format: winston.format.json(),
-	transports: [
-		//
-		// - Write all logs with level `error` and below to `error.log`
-		// - Write all logs with level `info` and below to `combined.log`
-		//
-		new winston.transports.File({ filename: 'error.log', level: 'error' }),
-		new winston.transports.File({ filename: 'combined.log' }),
-	],
+	levels: winston.config.syslog.levels,
+	transports: [new winston.transports.Syslog()],
 });
 
 //
 // If we're not in production then log to the `console` with the format:
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
 //
-if (process.env.NODE_ENV !== 'production') {
-	logger.add(
-		new winston.transports.Syslog({
-			format: winston.format.simple(),
-		})
-	);
-}
 
 module.exports = logger;
