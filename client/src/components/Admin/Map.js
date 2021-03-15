@@ -4,7 +4,6 @@ import ForceLink from 'react-sigma/lib/ForceLink';
 import NOverlap from 'react-sigma/lib/NOverlap';
 
 const Map = ({ mapData }) => {
-	const mapData = JSON.parse(localStorage.getItem('mapData'));
 	return (
 		<Sigma
 			renderer="svg"
