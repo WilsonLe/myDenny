@@ -1,14 +1,11 @@
 const redis = require('../../utils/initRedis');
 const logger = require('../../utils/logger');
 
-const visited = async (url) => {
+const getLink = async (url) => {
 	try {
-		const res = await redis.get(url);
-		if (res) return true;
-		else return false;
+		return JSON.parse(await redis.get(url));
 	} catch (error) {
 		logger.error(error);
 	}
 };
-
-module.exports = visited;
+module.exports = getLink;
