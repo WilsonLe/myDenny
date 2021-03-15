@@ -35,11 +35,7 @@ const initScraper = async (req, res) => {
 		// while there are still urls to visit, do:
 		while (toVisit.length != 0) {
 			const used = process.memoryUsage().heapUsed / 1024 / 1024;
-			logger.info(
-				`The script uses approximately ${
-					Math.round(used * 100) / 100
-				} MB`
-			);
+			const mbUsed = Math.round(used * 100) / 100;
 
 			try {
 				const { url, text, edges } = toVisit.pop(); // get last element
@@ -47,13 +43,13 @@ const initScraper = async (req, res) => {
 
 				if (await visited(currUrl)) {
 					logger.info(
-						`${toVisit.length} left - ${currUrl} already visited`
+						`${toVisit.length} left - ${mbUsed} - ${currUrl} already visited`
 					);
 					continue;
 				}
 				if (!currUrl) {
 					logger.info(
-						`${toVisit.length} left - ${currUrl} does not exist`
+						`${toVisit.length} left - ${mbUsed} - ${currUrl} does not exist`
 					);
 					continue;
 				}
@@ -114,7 +110,7 @@ const initScraper = async (req, res) => {
 					}
 				}
 				logger.info(
-					`${toVisit.length} left - ${currUrl} - added ${additions} - visited ${visiteds}`
+					`${toVisit.length} left - ${mbUsed} - ${currUrl} - added ${additions} - visited ${visiteds}`
 				);
 				insertLink({
 					url: currUrl,
@@ -133,7 +129,6 @@ const initScraper = async (req, res) => {
 	} catch (error) {
 		// await page.close();
 		// await browser.close();
-		console.log(error);
 		logger.error(error);
 	}
 };

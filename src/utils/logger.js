@@ -5,7 +5,10 @@ require('dotenv').config();
 const logger = winston.createLogger({
 	levels: winston.config.syslog.levels,
 	format: winston.format.simple(),
-	transports: [new winston.transports.Console()],
+	transports: [
+		new winston.transports.Console(),
+		new winston.transports.File({ filename: 'combined.log' }),
+	],
 });
 
 // If we're not in production then log to the `console` with the format:
