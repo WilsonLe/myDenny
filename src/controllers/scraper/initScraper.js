@@ -22,6 +22,7 @@ const initScraper = async (req, res) => {
 		// remove collection for testing
 		// await Visited.remove();
 		await redis.flushdb();
+
 		// init dfs algo
 		let toVisit = [
 			{
@@ -33,6 +34,13 @@ const initScraper = async (req, res) => {
 
 		// while there are still urls to visit, do:
 		while (toVisit.length != 0) {
+			const used = process.memoryUsage().heapUsed / 1024 / 1024;
+			logger.info(
+				`The script uses approximately ${
+					Math.round(used * 100) / 100
+				} MB`
+			);
+
 			try {
 				const { url, text, edges } = toVisit.pop(); // get last element
 				const currUrl = url; // create currUrl as alias for url extracted from last element

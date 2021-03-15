@@ -4,6 +4,7 @@ const redis = require('async-redis').createClient({ url: redisUri });
 const logger = require('./logger');
 
 redis.on('error', (error) => {
+	console.log(error);
 	logger.error(error);
 });
 
