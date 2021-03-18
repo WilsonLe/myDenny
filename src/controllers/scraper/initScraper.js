@@ -23,38 +23,52 @@ const initScraper = async (req, res) => {
 		// await Visited.remove();
 		await redis.flushdb();
 
-		// init dfs algo
-		let toVisit = [
-			{
+		(async () => {
+			try {
+				await redis.flushdb();
+				for (let i = 0; i < 10; i++) await redis.rpush('a', i);
+				console.log(await redis.llen('a'));
+				console.log(await redis.rpop('a'));
+				for (let i = 0; i < 10; i++) console.log(await redis.rpop('a'));
+			} catch (error) {
+				console.log(error);
+			}
+		})();
+
+		// init toVisit with first node
+		redis.rpush(
+			'toVisit',
+			JSON.stringify({
 				url: process.env.BASE_URL,
 				text: process.env.BASE_TEXT,
 				edges: '{}',
-			},
-		];
+			})
+		);
 
 		// while there are still urls to visit, do:
-		while (toVisit.length != 0) {
+		while ((await redis.llen('toVisit')) != 0) {
+			const toVisitLength = await redis.llen('toVisit');
 			const used = process.memoryUsage().heapUsed / 1024 / 1024;
 			const mbUsed = Math.round(used * 100) / 100;
 
 			try {
-				const { url, text, edges } = toVisit.pop(); // get last element
+				const { url, text, edges } = JSON.parse(redis.rpop('toVisit')); // get last element
 				const currUrl = url; // create currUrl as alias for url extracted from last element
 
 				if (await visited(currUrl)) {
 					logger.info(
-						`${toVisit.length} left - ${mbUsed} - ${currUrl} already visited`
+						`${toVisitLengthh} left - ${mbUsed} - ${currUrl} already visited`
 					);
 					continue;
 				}
 				if (!currUrl) {
 					logger.info(
-						`${toVisit.length} left - ${mbUsed} - ${currUrl} does not exist`
+						`${toVisitLength} left - ${mbUsed} - ${currUrl} does not exist`
 					);
 					continue;
 				}
 
-				if (!necessaryUrlToGoAndFetch(currUrl, toVisit.length)) {
+				if (!necessaryUrlToGoAndFetch(currUrl, toVisitLength)) {
 					// if url is not valid for searching more links from, do not visit, just push to the visited with defaults.
 					insertLink({
 						url: currUrl,
@@ -101,16 +115,19 @@ const initScraper = async (req, res) => {
 					} else {
 						let edges = {};
 						edges[currUrl] = 1;
-						toVisit.push({
-							url: nextUrl,
-							text,
-							edges: JSON.stringify(edges),
-						});
+						redis.rpush(
+							'toVisit',
+							JSON.stringify({
+								url: nextUrl,
+								text,
+								edges: JSON.stringify(edges),
+							})
+						);
 						additions++;
 					}
 				}
 				logger.info(
-					`${toVisit.length} left - ${mbUsed} - ${currUrl} - added ${additions} - visited ${visiteds}`
+					`${toVisitLength} left - ${mbUsed} - ${currUrl} - added ${additions} - visited ${visiteds}`
 				);
 				insertLink({
 					url: currUrl,
