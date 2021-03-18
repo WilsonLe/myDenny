@@ -23,18 +23,6 @@ const initScraper = async (req, res) => {
 		// await Visited.remove();
 		await redis.flushdb();
 
-		(async () => {
-			try {
-				await redis.flushdb();
-				for (let i = 0; i < 10; i++) await redis.rpush('a', i);
-				console.log(await redis.llen('a'));
-				console.log(await redis.rpop('a'));
-				for (let i = 0; i < 10; i++) console.log(await redis.rpop('a'));
-			} catch (error) {
-				console.log(error);
-			}
-		})();
-
 		// init toVisit with first node
 		redis.rpush(
 			'toVisit',
@@ -52,15 +40,19 @@ const initScraper = async (req, res) => {
 			const mbUsed = Math.round(used * 100) / 100;
 
 			try {
-				const { url, text, edges } = JSON.parse(redis.rpop('toVisit')); // get last element
+				const { url, text, edges } = JSON.parse(
+					await redis.rpop('toVisit')
+				); // get last element
+
 				const currUrl = url; // create currUrl as alias for url extracted from last element
 
 				if (await visited(currUrl)) {
 					logger.info(
-						`${toVisitLengthh} left - ${mbUsed} - ${currUrl} already visited`
+						`${toVisitLength} left - ${mbUsed} - ${currUrl} already visited`
 					);
 					continue;
 				}
+
 				if (!currUrl) {
 					logger.info(
 						`${toVisitLength} left - ${mbUsed} - ${currUrl} does not exist`
@@ -137,6 +129,7 @@ const initScraper = async (req, res) => {
 					timeClick: '{}',
 				});
 			} catch (error) {
+				console.log(error);
 				logger.error(error);
 				continue;
 			}
@@ -146,6 +139,7 @@ const initScraper = async (req, res) => {
 	} catch (error) {
 		// await page.close();
 		// await browser.close();
+		console.log(error);
 		logger.error(error);
 	}
 };
